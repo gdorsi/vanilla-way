@@ -1,0 +1,41 @@
+body {
+    overflow: hidden;
+}
+
+x-slide {
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: transform .3s ease-out;
+}
+
+x-slide.active, x-slide.prev, x-slide.next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+x-slide.prev {
+    transform: translateX(-100%);
+}
+
+x-slide.next {
+    transform: translateX(100%);
+}
+
+x-progress {
+    --progress: 0;
+    position: absolute;
+    bottom:0;
+    left: 0;
+    background-color: blue;
+    height: 3px;
+    width: 100%;
+    transform: scaleX(var(--progress));
+    transform-origin: 0;
+    transition: linear .3s transform;
+}
