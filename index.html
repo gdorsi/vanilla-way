@@ -16,24 +16,68 @@
         <p>Performance paladin!</p>
     </x-slide>
     <x-slide>
-        <h2>The use case</h2>
-        <p>SEO ready website</p>
-        <p>With view layer in PHP</p>
+        <h2>A vanilla web app</h2>
+        <p>Do things by using the platform</p>
+        <p>(when it is possible and makes sense)</p>
+        <note>
+            I your application needs to manage complex state transitions
+            a dom diffing/patching library can be a good option
+        </note>
     </x-slide>
     <x-slide>
-        <h2>The constraints</h2>
-        <p>Client side rendering during page load</p>
-        <p>Small bundles</p>
-        <p>Reusable/Testable components</p>
+        <h2>Components</h2>
+        <p>Presentational|Container</p>
+        <p>(ty Redux)</p>
     </x-slide>
-    <x-slide class="active"></x-slide>
-    <x-slide></x-slide>
-    <x-slide></x-slide>
-    <x-slide></x-slide>
-    <x-slide></x-slide>
-    <x-slide></x-slide>
-    <x-slide></x-slide>
-    <x-progress>
+    <x-slide>
+        <h2>Presentational Components</h2>
+        <p>No business/page related logic</p>
+        <p>Implemented with custom elements</p>
+    </x-slide>
+    <x-slide>
+        <p>Custom element code example (autocomplete)</p>
+    </x-slide>
+    <x-slide>
+        <h2>Container Components</h2>
+        <p>Business/page related logic</p>
+        <p>Implemented with functions</p>
+    </x-slide>
+    <x-slide>
+        <p>Container Components code example (city autocomplete)</p>
+    </x-slide>
+    <x-slide>
+        <h2>State managment</h2>
+        <note>Avoid to duplicate source of truth</note>
+    </x-slide>
+    <x-slide>
+        <h2>State managment</h2>
+        <p>Try to derive from the DOM</p>
+        <p>Custom element props example</p>
+    </x-slide>
+    <x-slide>
+        <h2>State managment</h2>
+        <p>Implement transitions trough stream</p>
+        <p>stream example</p>
+    </x-slide>
+    <x-slide>
+        <h2>Callbag</h2>
+        <p>info from https://github.com/callbag/callbag</p>
+    </x-slide>
+    <x-slide>
+        <h2>Callbag</h2>
+        <p>examples</p>
+    </x-slide>
+    <x-slide>
+        <h2>querySelector functor</h2>
+        <p>explaining functors</p>
+        <p>component composition</p>
+    </x-slide>
+    <x-slide>
+        <h2>Demo #1 Profile edit form</h2>
+    </x-slide>
+    <x-slide>
+        <h2>Demo #2 Slideshow library</h2>
+    </x-slide>
     <script src="src/index.js"></script>
 </body>
 
