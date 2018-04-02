@@ -16,30 +16,26 @@ let keyboard$ = pipe(
 
 let deck$ = (initalSlide, slidesCount) =>
   pipe(
-    merge(keyboard$, tap(0)),
+    merge(keyboard$, tap(initalSlide)),
     scan(
       (active, modifier) =>
         Math.max(0, Math.min(slidesCount - 1, active + modifier)),
-      initalSlide
+      0
     ),
     scan(
       ({ active }, next) => ({
         active: next,
         prev: active
       }),
-      { active: initalSlide }
+      { active: 0 }
     )
   );
 
 let deck = el => {
   let slides = slice.call(el.querySelectorAll(Slide.is));
-  let active = slides.findIndex(slide => slide.active);
+  let initialSlide = location.hash.slice(1) || slides.findIndex(slide => slide.active);
 
-  if (active === -1) {
-    active = 0;
-  }
-
-  let state$ = deck$(active, slides.length);
+  let state$ = deck$(initialSlide, slides.length);
 
   pipe(
     state$,
@@ -56,6 +52,13 @@ let deck = el => {
     map(({ active }) => active / (slides.length - 1)),
     observe(percentage => {
       progress.percentage = percentage;
+    })
+  );
+
+  pipe(
+    state$,
+    observe(({ active }) => {
+      location.hash = active;
     })
   );
 };
