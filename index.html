@@ -8,19 +8,28 @@
     <x-slide>
         <h2>The vanilla way</h2>
     </x-slide>
-    <x-slide>
-        <h2>Who am i?</h2>
-        <p>Guido D'Orsi</p>
-        <p>Front-end engineer @ Immobiliare.it</p>
-        <p>Functional programming enthusiast</p>
-        <p>Performance paladin!</p>
+    <x-slide class="media-col">
+        <img class="media" src="me.jpg" width="40%" height="100%">
+        <div class="media-col__info" style="flex-grow: 2;text-align: center;">
+            <h2>Who am i?</h2>
+            <p>Guido D'Orsi</p>
+            <p>Front-end engineer @ Immobiliare.it</p>
+            <p>Functional programming enthusiast</p>
+            <p>Performance paladin!</p>
+            <x-note>
+                bundles size checks, trackers impact analyze
+            </x-note>
+        </div>
     </x-slide>
     <x-slide>
-        <h2>A vanilla web app</h2>
+        <h2>A vanilla web app (for me)</h2>
         <p>Do things by using the platform</p>
         <p>(when it is possible and makes sense)</p>
         <x-note>
-            If your application needs to manage complex state transitions a dom diffing/patching library can be a good option
+            If the application needs to manage complex state transitions a dom diffing/patching library can be a good option
+        </x-note>
+        <x-note>
+            If you are writing a simple login page, maybe things like Rect or Angular are too much
         </x-note>
     </x-slide>
     <x-slide>
@@ -78,14 +87,10 @@
         <h2>Demo #2 Slideshow library</h2>
     </x-slide>
     <x-slide>
-        <h2>Further readings</h2>
-        <p>Skatejs</p>
-    </x-slide>
-    <x-slide>
         <h2>That's all folks!</h2>
     </x-slide>
     <x-progress>
-    <script src="src/index.js"></script>
+        <script src="src/index.js"></script>
 </body>
 
 </html>
