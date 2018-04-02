@@ -6,7 +6,7 @@
 
 <body>
     <x-slide>
-        The vanilla way
+        <h2>The vanilla way</h2>
     </x-slide>
     <x-slide>
         <h2>Who am i?</h2>
@@ -19,9 +19,9 @@
         <h2>A vanilla web app</h2>
         <p>Do things by using the platform</p>
         <p>(when it is possible and makes sense)</p>
-        <note>
-            I your application needs to manage complex state transitions a dom diffing/patching library can be a good option
-        </note>
+        <x-note>
+            If your application needs to manage complex state transitions a dom diffing/patching library can be a good option
+        </x-note>
     </x-slide>
     <x-slide>
         <h2>Components</h2>
@@ -46,7 +46,7 @@
     </x-slide>
     <x-slide>
         <h2>State managment</h2>
-        <note>Avoid to duplicate source of truth</note>
+        <x-note>Avoid to duplicate source of truth</x-note>
     </x-slide>
     <x-slide>
         <h2>State managment</h2>
@@ -84,7 +84,7 @@
     <x-slide>
         <h2>That's all folks!</h2>
     </x-slide>
-
+    <x-progress>
     <script src="src/index.js"></script>
 </body>
 
