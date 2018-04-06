@@ -72,3 +72,43 @@ img {
   transform-origin: bottom right;
   background: #eee;
 }
+
+/* Examples */
+toggle-button {
+  display: inline-block;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+toggle-button.example {
+  min-width: 200px;
+  text-align: center;
+}
+
+toggle-button.example:before {
+  content: 'Click me!';
+}
+
+toggle-button.example.active {
+  background: red;
+  border: red;
+}
+
+toggle-button.example.active:before {
+  content: 'I\'m active!';
+}
+
+toggle-button.love {
+  color: red;
+  width: 33px;
+  height: 33px;
+  text-align: center;
+}
+
+
+toggle-button.love.active {
+  background: red;
+  color: white;
+}

@@ -6,6 +6,8 @@ import { pipe, map, merge, scan } from "callbag-basics-esmodules";
 import { onArrowKeyPress$, tap } from "./stream";
 import { Slide } from "./Slide";
 import { Progress } from "./Progress";
+import { ToggleButton } from "./ToggleButton";
+import { loveButton } from "./loveButton";
 
 let { slice } = [];
 
@@ -65,5 +67,10 @@ let deck = el => {
 
 customElements.define(Slide.is, Slide);
 customElements.define(Progress.is, Progress);
+
+//Examples
+customElements.define(ToggleButton.is, ToggleButton);
+loveButton(document.querySelector('.js-love'));
+
 
 deck(document.body);
