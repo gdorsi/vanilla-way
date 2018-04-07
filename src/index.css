@@ -63,6 +63,12 @@ img {
   object-fit: cover;
 }
 
+img.full {
+  width: 100vw;
+  height: 100vh;
+  object-fit: contain;
+}
+
 .speaker x-slide {
   transition: none;
 }
