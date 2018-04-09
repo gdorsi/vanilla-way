@@ -1,3 +1,4 @@
+import { define, HTMLElement } from "./web-components";
 import { emit } from "./emit";
 
 export class ToggleButton extends HTMLElement {
@@ -29,3 +30,5 @@ export class ToggleButton extends HTMLElement {
     return this.classList.contains('active');
   }
 }
+
+define(ToggleButton.is, ToggleButton);

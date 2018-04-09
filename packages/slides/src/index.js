@@ -1,5 +1,4 @@
-import "document-register-element";
-
+import { whenDefined } from "./web-components";
 import { ToggleButton } from "./ToggleButton";
 import { loveButton } from "./loveButton";
 import { deck } from "./deck";
@@ -8,7 +7,6 @@ import { deck } from "./deck";
 deck(document.body);
 
 //Examples
-customElements.define(ToggleButton.is, ToggleButton);
-loveButton(document.querySelector('.js-love'));
-
-
+whenDefined(ToggleButton.is).then(() => {
+  loveButton(document.querySelector(".js-love"));
+});

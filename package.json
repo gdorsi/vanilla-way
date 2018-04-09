@@ -1,17 +1,7 @@
 {
-  "name": "slides",
-  "version": "0.1.0",
-  "main": "src/index.js",
+  "name": "slides-workspace",
+  "version": "1.0.0",
   "license": "MIT",
   "private": true,
-  "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html"
-  },
-  "dependencies": {
-    "callbag-basics-esmodules": "^3.0.0",
-    "callbag-observe": "^1.0.0",
-    "document-register-element": "^1.7.2",
-    "parcel-bundler": "^1.7.0"
-  }
+  "workspaces": ["packages/*"]
 }

@@ -1,3 +1,5 @@
+
+import { define, HTMLElement } from "./web-components";
 export let isSlide = el => el instanceof Slide;
 
 let slideFlag = (el, name, value) => {
@@ -23,3 +25,5 @@ export class Slide extends HTMLElement {
     slideFlag(this.nextElementSibling, "next", value);
   }
 }
+
+define(Slide.is, Slide);
