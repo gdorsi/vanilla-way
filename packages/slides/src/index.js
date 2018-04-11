@@ -1,12 +1,20 @@
-import { whenDefined } from "./web-components";
+import { HTMLElement, define } from "my-custom-elements-loader";
 import { ToggleButton } from "./ToggleButton";
 import { loveButton } from "./loveButton";
 import { deck } from "./deck";
 
-//main
-deck(document.body);
+class App extends HTMLElement {
+  static get is() {
+    return 'my-presentation';
+  }
 
-//Examples
-whenDefined(ToggleButton.is).then(() => {
-  loveButton(document.querySelector(".js-love"));
-});
+  connectedCallback() {
+    deck(this);
+
+    //Examples
+    loveButton(document.querySelector(".js-love"));
+  }
+}
+
+define(App.is, App);
+

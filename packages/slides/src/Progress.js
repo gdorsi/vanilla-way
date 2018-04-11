@@ -1,4 +1,4 @@
-import { define, HTMLElement } from "./web-components";
+import { define, HTMLElement } from "my-custom-elements-loader";
 
 export class Progress extends HTMLElement {
   static get is() {

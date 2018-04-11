@@ -8,8 +8,12 @@ export class ToggleButton extends HTMLElement {
 
   connectedCallback() {
     this.toggle = () => {
-      this.active = !this.active;
-      emit(this, `change`);
+      this.classList.toggle('active');
+      if (this.classList.contains('active')) {
+        emit(this, `toggle-button:on`);
+      } else {
+        emit(this, `toggle-button:off`);
+      }
     };
 
     this.addEventListener('click', this.toggle);
@@ -17,14 +21,6 @@ export class ToggleButton extends HTMLElement {
 
   disconnectedCallback() {
     this.removeEventListener('click', this.toggle);
-  }
-  
-  set active(value) {
-    this.classList.toggle('active', !!value);
-  }
-
-  get active() {
-    return this.classList.contains('active');
   }
 }
 

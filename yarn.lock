@@ -1653,6 +1653,12 @@ expand-brackets@^2.1.4:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
+express-static-gzip@^0.3.2:
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/express-static-gzip/-/express-static-gzip-0.3.2.tgz#89ede84547a5717de3146315f62dc996c071a88d"
+  dependencies:
+    serve-static "^1.12.3"
+
 express@^4.16.3:
   version "4.16.3"
   resolved "https://registry.yarnpkg.com/express/-/express-4.16.3.tgz#6af8a502350db3246ecc4becf6b5a34d22f7ed53"
@@ -3486,7 +3492,7 @@ serialize-to-js@^1.1.1:
     js-beautify "^1.7.5"
     safer-eval "^1.2.3"
 
-serve-static@1.13.2, serve-static@^1.12.4:
+serve-static@1.13.2, serve-static@^1.12.3, serve-static@^1.12.4:
   version "1.13.2"
   resolved "https://registry.yarnpkg.com/serve-static/-/serve-static-1.13.2.tgz#095e8472fd5b46237db50ce486a43f4b86c6cec1"
   dependencies:

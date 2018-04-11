@@ -1,5 +1,5 @@
 
-import { define, HTMLElement } from "./web-components";
+import { define, HTMLElement } from "my-custom-elements-loader";
 export let isSlide = el => el instanceof Slide;
 
 let slideFlag = (el, name, value) => {

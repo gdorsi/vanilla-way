@@ -1,5 +1,6 @@
 let express = require("express");
+let static = require("express-static-gzip");
 let app = express();
 
-app.use(express.static("dist"));
+app.use(static("dist"));
 app.listen(3000);

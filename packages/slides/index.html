@@ -5,112 +5,107 @@
 </head>
 
 <body>
-    <x-slide>
-        <h2>The vanilla way</h2>
-    </x-slide>
-    <x-slide class="media-col">
-        <img class="media" src="me.jpg" width="40%" height="100%">
-        <div class="media-col__info" style="flex-grow: 2;text-align: center;">
-            <h2>Who am i?</h2>
-            <p>Guido D'Orsi</p>
-            <p>Front-end engineer @ Immobiliare.it</p>
-            <p>Functional programming enthusiast</p>
-            <p>Performance paladin!</p>
+    <my-presentation>
+        <x-slide>
+            <h2>The vanilla way</h2>
+        </x-slide>
+        <x-slide class="media-col">
+            <img class="media" src="me.jpg" width="40%" height="100%">
+            <div class="media-col__info" style="flex-grow: 2;text-align: center;">
+                <h2>Who am i?</h2>
+                <p>Guido D'Orsi</p>
+                <p>Front-end engineer @ Immobiliare.it</p>
+                <p>Functional programming enthusiast</p>
+                <p>Performance paladin!</p>
+                <x-note>
+                    bundles size checks, trackers impact analyze
+                </x-note>
+            </div>
+        </x-slide>
+        <x-slide>
+            <h2>A vanilla web app (for me)</h2>
+            <p>Do things by using the platform</p>
+            <p>(when it is possible and makes sense)</p>
             <x-note>
-                bundles size checks, trackers impact analyze
+                If the application needs to manage complex state transitions a dom diffing/patching library can be a good option
             </x-note>
-        </div>
-    </x-slide>
-    <x-slide>
-        <h2>A vanilla web app (for me)</h2>
-        <p>Do things by using the platform</p>
-        <p>(when it is possible and makes sense)</p>
-        <x-note>
-            If the application needs to manage complex state transitions a dom diffing/patching library can be a good option
-        </x-note>
-        <x-note>
-            If you are writing a simple login page, maybe things like Rect or Angular are too much
-        </x-note>
-    </x-slide>
-    <x-slide>
-        <h2>Components</h2>
-        <p>Generic || Applicative</p>
-        <p>Similar to Presentational/Container of Redux</p>
-    </x-slide>
-    <x-slide>
-        <h2>Generic Components</h2>
-        <p>No business/page related logic</p>
-        <p>Implemented with custom elements</p>
-    </x-slide>
-    <x-slide>
-        <p>Generic Component code example</p>
-        <toggle-button class="example">
-    </x-slide>
-    <x-slide>
-        <img class="full" src="code-examples/toggle-btn.png">
-    </x-slide>
-    <x-slide>
-        <h2>Applicative Components</h2>
-        <p>Business/page related logic</p>
-        <p>Implemented with functions</p>
-        <p>decorators/aggregators of components</p>
-    </x-slide>
-    <x-slide>
-        <p>Applicative Components code example</p>
-        <toggle-button class="love js-love">
-            ♥
-        </toggle-button>
-    </x-slide>
-    <x-slide>
-        <img class="full" src="code-examples/love-btn.png">
-    </x-slide>
-    <x-slide>
-        <h2>State managment</h2>
-        <p>Difficult to avoid to duplicate source of truth</p>
-    </x-slide>
-    <x-slide>
-        <h2>State managment</h2>
-        <p>Try to derive from the DOM</p>
-    </x-slide>
-    <x-slide>
-        <img class="full" src="code-examples/slide.png">
-    </x-slide>
-    <x-slide>
-        <h2>State managment</h2>
-        <p>Implement transitions trough stream/reactive programming</p>
-    </x-slide>
-    <x-slide>
-        <img class="full" src="code-examples/deck1.png">
-    </x-slide>
-    <x-slide>
-        <img class="full" src="code-examples/deck2.png">
-    </x-slide>
-    <x-slide>
-        <h2>The callbag specification</h2>
-        <p>info from https://github.com/callbag/callbag</p>
-    </x-slide>
-    <x-slide>
-        <img class="full" src="code-examples/callbags.png">
-    </x-slide>
-    <x-slide>
-        <h2>Compoents composition || Application load</h2>
-        <p>with a querySelector maybe functor!</p>
-    </x-slide>
-    <x-slide>
-        <h2>Compoents composition</h2>
-        <p>example</p>
-    </x-slide>
-    <x-slide>
-        <h2>Functors?</h2>
-    </x-slide>
-    <x-slide>
-        <h2>Maybe functors?</h2>
-        <p>Very helpful for nullable operations</p>
-    </x-slide>
-    <x-slide>
-        <h2>That's all folks!</h2>
-    </x-slide>
-    <x-progress>
+            <x-note>
+                If you are writing a simple login page, maybe things like Rect or Angular are too much
+            </x-note>
+        </x-slide>
+        <x-slide>
+            <h2>Let'start from building blocks!</h2>
+        </x-slide>
+        <x-slide>
+            <h2>&lt;custom-elements&gt;</h2>
+            <p>Good for generic components</p>
+            <p>No business/page related logic</p>
+        </x-slide>
+        <x-slide>
+            <img class="full" src="code-examples/toggle-btn.png">
+        </x-slide>
+        <x-slide>
+            <p>live example!</p>
+            <toggle-button class="example">
+        </x-slide>
+        <x-slide>
+            <h2>Functions!</h2>
+            <p>handle state transitions on multiple components</p>
+            <p>implement business/page logic</p>
+        </x-slide>
+
+        <x-slide>
+            <img class="full" src="code-examples/love-btn.png">
+        </x-slide>
+        <x-slide>
+            <p>live example!</p>
+            <toggle-button class="love js-love">
+                ♥
+            </toggle-button>
+        </x-slide>
+        <x-slide>
+            <h2>State managment</h2>
+            <p>Duplicating the source of truth can be a bad practice</p>
+        </x-slide>
+        <x-slide>
+            <h2>State managment</h2>
+            <p>Try to derive from the DOM</p>
+        </x-slide>
+        <x-slide>
+            <img class="full" src="code-examples/toggle-btn.png">
+        </x-slide>
+        <x-slide>
+            <h2>State managment</h2>
+            <p>Implement transitions trough stream/reactive programming</p>
+        </x-slide>
+        <x-slide>
+            #TODO Month example
+        </x-slide>
+        <x-slide>
+            <h2>The callbag specification</h2>
+            <p>info from https://github.com/callbag/callbag</p>
+        </x-slide>
+        <x-slide>
+            #TODO Add comments to months example
+        </x-slide>
+        <x-slide>
+            <h2>Null safety with Maybe functors!</h2>
+        </x-slide>
+        <x-slide>
+            <h2>A querySelector functor</h2>
+            <p>lazy evaluation</p>
+            <p>composition</p>
+            <p>null safety!</p>
+        </x-slide>
+        <x-slide>
+            <h2>Compoents composition</h2>
+            <p>example</p>
+        </x-slide>
+        <x-slide>
+            <h2>That's all folks!</h2>
+        </x-slide>
+        <x-progress>
+    </my-presentation>
     <script src="src/index.js"></script>
 </body>
 

@@ -2,7 +2,7 @@ import { pipe, map, fromEvent, filter, merge } from "callbag-basics-esmodules";
 
 let { filter: filterArray } = [];
 
-export let onArrowKeyPress$ = pipe(
+export let arrowKeyPress$ = pipe(
   fromEvent(document, "keydown"),
   map(evt => evt.key || evt.keyCode || evt.which),
   map(
@@ -18,7 +18,7 @@ export let onArrowKeyPress$ = pipe(
   filter(key => key.indexOf("Arrow") === 0)
 );
 
-export let tap = value => (start, sink) => {
+export let fromValue = value => (start, sink) => {
   if (start !== 0) return;
 
   sink(0);
