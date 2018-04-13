@@ -42,7 +42,7 @@ export let deck = el => {
 
   pipe(
     slideChange$,
-    map(([active, next]) => next / (slidesCount - 1)),
+    map(([, next]) => next / (slidesCount - 1)),
     observe(percentage => {
       progress.percentage = percentage;
     })
@@ -50,7 +50,7 @@ export let deck = el => {
 
   pipe(
     slideChange$,
-    observe(([active, next]) => {
+    observe(([, next]) => {
       location.hash = next;
     })
   );
