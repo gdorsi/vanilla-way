@@ -9,6 +9,10 @@ body {
   overflow: hidden;
 }
 
+p {
+  max-width: 70vw;
+}
+
 x-slide {
   display: none;
   position: absolute;
@@ -64,8 +68,8 @@ img {
 }
 
 img.full {
-  width: 100vw;
-  height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
   object-fit: contain;
 }
 
@@ -79,42 +83,55 @@ img.full {
   background: #eee;
 }
 
-/* Examples */
-toggle-button {
-  display: inline-block;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  border: 1px solid black;
+/* Example */
+a-mole {
+  overflow: hidden;
+  position: relative;
+  height: 10vw;
+  width: 10vw;
 }
 
-toggle-button.example {
-  min-width: 200px;
-  text-align: center;
+a-mole::after {
+  display: block;
+  background: url("images/dirt.svg") bottom center no-repeat;
+  background-size: contain;
+  content: "";
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  z-index: 2;
+  bottom: -6px;
 }
 
-toggle-button.example:before {
-  content: 'Click me!';
+a-mole::before {
+  background: url("images/mole.svg") bottom center no-repeat;
+  background-size: 60%;
+  content: "";
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 100%;
 }
 
-toggle-button.example.active {
-  background: red;
-  border: red;
+a-mole.up::before{
+  animation: mole-animation 2s ease-in-out;
 }
 
-toggle-button.example.active:before {
-  content: 'I\'m active!';
+.score {
+  font-family: monospace;
 }
 
-toggle-button.love {
-  color: red;
-  width: 33px;
-  height: 33px;
-  text-align: center;
-}
-
-
-toggle-button.love.active {
-  background: red;
-  color: white;
+@keyframes mole-animation {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-100%);
+  }
+  60% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }

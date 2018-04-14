@@ -1,5 +1,8 @@
 export function emit(el, name) {
-  const eventOptions = {};
+  const eventOptions = {
+    bubbles: true,
+    cancelable: false
+  };
   let evt;
 
   if ("composed" in CustomEvent.prototype) {
