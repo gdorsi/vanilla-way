@@ -1,8 +1,8 @@
 
-export function scoredWack(el) {
+export function scoredWhack(el) {
     let scoreBoard = el.querySelector('score-board');
 
-    el.addEventListener('wack!', () => {
+    el.addEventListener('hit!', () => {
         scoreBoard.points += 1;
     });
 

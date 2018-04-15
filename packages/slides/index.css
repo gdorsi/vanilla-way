@@ -135,3 +135,23 @@ a-mole.up::before{
     transform: translateY(0);
   }
 }
+
+hit-message {
+  position: fixed;
+  z-index: 5;
+  animation: message-animation .3s ease-in-out;
+  animation-fill-mode: both;
+  user-select: none;
+  background: yellow;
+  border: 1px solid red;
+  border-radius: 10px;
+}
+
+@keyframes message-animation {
+  from {
+    transform: translate(-50%, -50%) scale(0) rotate(0);
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1) rotate(-30deg);
+  }
+}

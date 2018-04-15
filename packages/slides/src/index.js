@@ -1,11 +1,9 @@
 import { HTMLElement, define } from "my-custom-elements-loader";
 import { deck } from "./deck";
-import { startExample2, startExample3 } from "./example";
+import { startExample2, startExample3, startExample4 } from "./example";
 
 class App extends HTMLElement {
-  static get is() {
-    return "my-presentation";
-  }
+  static is = "my-presentation";
 
   connectedCallback() {
     deck(this);
@@ -13,6 +11,7 @@ class App extends HTMLElement {
     //Examples
     startExample2(this);
     startExample3(this);
+    startExample4(this);
   }
 }
 

@@ -1,15 +1,20 @@
 import './Mole';
 import './ScoreBoard';
-import { simpleWack } from './simple-wack';
-import { scoredWack } from './scored-wack';
+import { simpleWhack } from './simple-whack';
+import { scoredWhack } from './scored-whack';
+import { callbagWhack } from './callbag-final-whack';
 
 export function startExample1(deck) {
 }
 
 export function startExample2(deck) {
-    simpleWack(deck.querySelector('.example2'));
+    simpleWhack(deck.querySelector('.example2'));
 }
 
 export function startExample3(deck) {
-    scoredWack(deck.querySelector('.example3'));
+    scoredWhack(deck.querySelector('.example3'));
+}
+
+export function startExample4(deck) {
+    callbagWhack(deck.querySelector('.example4'));
 }

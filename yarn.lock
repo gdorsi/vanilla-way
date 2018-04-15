@@ -1220,7 +1220,7 @@ callbag-concat@1.0.x:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/callbag-concat/-/callbag-concat-1.0.1.tgz#9023732ab2a3c5b98e06628e6eb603da2e696280"
 
-callbag-filter@1.0.x:
+callbag-filter@1.0.x, callbag-filter@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/callbag-filter/-/callbag-filter-1.0.1.tgz#82d3b80231cf890fd6e0d61c3a33cd09dcb52570"
 
@@ -1232,7 +1232,14 @@ callbag-for-each@1.0.x:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/callbag-for-each/-/callbag-for-each-1.0.1.tgz#8c0ad8c7e8f713c9e6a21d44655b6b77033c3520"
 
-callbag-from-event@1.0.x:
+callbag-from-delegated-event@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/callbag-from-delegated-event/-/callbag-from-delegated-event-1.1.1.tgz#caf0d882f8518b82c09ae87e48c34f441eb24b17"
+  dependencies:
+    callbag-filter "^1.0.0"
+    callbag-from-event "^1.0.0"
+
+callbag-from-event@1.0.x, callbag-from-event@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/callbag-from-event/-/callbag-from-event-1.0.0.tgz#e3a8931cd46775256eff3a960a743ad1c7ccfea9"
 

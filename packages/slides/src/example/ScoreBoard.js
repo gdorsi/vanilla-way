@@ -1,5 +1,4 @@
 import { define, HTMLElement } from "my-custom-elements-loader";
-import { emit } from "../emit";
 
 export class ScoreBoard extends HTMLElement {
   static is = "score-board";

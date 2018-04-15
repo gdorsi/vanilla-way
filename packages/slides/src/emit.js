@@ -1,8 +1,10 @@
-export function emit(el, name) {
+export function emit(el, name, detail, {bubbles, cancelable} = {}) {
   const eventOptions = {
-    bubbles: true,
-    cancelable: false
+    bubbles: bubbles || true,
+    cancelable: cancelable || false,
+    detail,
   };
+
   let evt;
 
   if ("composed" in CustomEvent.prototype) {
@@ -13,9 +15,10 @@ export function emit(el, name) {
       name,
       eventOptions.bubbles,
       eventOptions.cancelable,
-      eventOptions.detail
+      detail
     );
     Object.defineProperty(evt, "composed", { value: eventOptions.composed });
   }
+  
   return el.dispatchEvent(evt);
 }

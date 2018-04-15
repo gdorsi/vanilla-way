@@ -11,33 +11,29 @@ function randomTime(min, max) {
 export class Mole extends HTMLElement {
   static is = "a-mole";
 
-  connectedCallback() {
-    this.addEventListener("click", this._click);
-    this.addEventListener("animationend", this._goDown);
-    this._goUp();
-  }
+  constructor() {
+    super();
+    
+    this.addEventListener("click", ({ x, y }) => {
+      emit(this, this.classList.contains("up") ? "hit!" : "miss!", { x, y });
+    });
 
-  disconnectedCallback() {
-    this.removeEventListener("click", this._click);
-    this.removeEventListener("animationend", this._goDown);
+    this.addEventListener("animationend", () => {
+      this.classList.remove("up")
+      this._goUp();
+    });
   }
-
-  _click = () => {
-    if (this.classList.contains("up")) {
-      emit(this, `wack!`);
-    }
-  };
 
   _goUp() {
     setTimeout(() => {
       this.classList.add("up");
     }, randomTime(MIN_TIME, MAX_TIME));
   }
-  
-  _goDown = () => {
-    this.classList.remove("up");
+
+  connectedCallback() {
     this._goUp();
-  };
+  }
 }
 
 customElements.define(Mole.is, Mole);
+  
