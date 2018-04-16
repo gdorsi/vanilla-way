@@ -24,14 +24,18 @@
             <p>in order to be as lightweight as possible</p>
         </x-slide>
         <x-slide>
-            <h2>When this makes sense?</h2>
-            <p>For web pages that you don't need to rely so much on client side rendering</p>
+            <h2>The objectives</h2>
+            <ul>
+                <li>Startup performances</li>
+                <li>Can do SSR with a different language than Javascript</li>
+                <li>Find out how much we can scale without a framework</li>
+            </ul>
         </x-slide>
         <x-slide>
-            <h2>Let'start from building blocks!</h2>
+            <h2>Let's start from building blocks!</h2>
         </x-slide>
         <x-slide>
-            <h2>&lt;custom-elements&gt;</h2>
+            <h2>&lt;Custom-Elements&gt;</h2>
             <p>Good for generic components</p>
             <p>No business/page related logic</p>
         </x-slide>
@@ -45,7 +49,7 @@
             <img src="images/code-examples/simple-mole.png" class="full">
         </x-slide>
         <x-slide>
-            <div style="display: flex;">
+            <div class="col-3">
                 <a-mole></a-mole>
                 <a-mole></a-mole>
                 <a-mole></a-mole>
@@ -71,10 +75,11 @@
             <img src="images/code-examples/simple-whack.png" class="full">
         </x-slide>
         <x-slide class="example2">
-            <p>Score:
+            <p>
+                Score:
                 <span class="score">0</span>
             </p>
-            <div style="display: flex;">
+            <div class="col-3">
                 <a-mole></a-mole>
                 <a-mole></a-mole>
                 <a-mole></a-mole>
@@ -98,7 +103,7 @@
             <p>Score:
                 <score-board>5</score-board>
             </p>
-            <div style="display: flex;">
+            <div class="col-3">
                 <a-mole></a-mole>
                 <a-mole></a-mole>
                 <a-mole></a-mole>
@@ -131,21 +136,25 @@
             <p>Score:
                 <score-board>0</score-board>
             </p>
-            <div style="display: flex;">
+            <div class="col-3">
                 <a-mole></a-mole>
                 <a-mole></a-mole>
                 <a-mole></a-mole>
             </div>
-            <div style="display: flex;">
+            <div class="col-3">
                 <a-mole></a-mole>
                 <a-mole></a-mole>
                 <a-mole></a-mole>
             </div>
-            <div style="display: flex;">
+            <div class="col-3">
                 <a-mole></a-mole>
                 <a-mole></a-mole>
                 <a-mole></a-mole>
             </div>
+        </x-slide>
+        <x-slide>
+            <h2>Unit testing?</h2>
+            <p>Inside a browser with Puppeteer & Karma</p>
         </x-slide>
         <x-slide>
             <h2>Useful libraries</h2>
@@ -160,7 +169,7 @@
         </x-slide>
         <x-progress>
     </my-presentation>
-    <script src="src/index.js"></script>
+    <script src="dist/index.js"></script>
 </body>
 
 </html>

@@ -83,6 +83,12 @@ img.full {
   background: #eee;
 }
 
+/* Utilities */
+.col-3 {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
 /* Example */
 a-mole {
   overflow: hidden;
