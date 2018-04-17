@@ -17,10 +17,3 @@ export let arrowKeyPress$ = pipe(
   ),
   filter(key => key.indexOf("Arrow") === 0)
 );
-
-export let fromValue = value => (start, sink) => {
-  if (start !== 0) return;
-
-  sink(0);
-  sink(1, value);
-};

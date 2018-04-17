@@ -8,18 +8,18 @@ function randomTime(min, max) {
   return Math.round(Math.random() * (max - min) + min);
 }
 
-export class Mole extends HTMLElement {
-  static is = "a-mole";
+export class BasicMole extends HTMLElement {
+  static is = "a-basic-mole";
 
   constructor() {
     super();
-    
-    this.addEventListener("click", ({ x, y }) => {
-      emit(this, this.classList.contains("up") ? "hit!" : "miss!", { x, y });
+
+    this.addEventListener("click", () => {
+      if (this.classList.contains("up")) emit(this, "hit!");
     });
 
     this.addEventListener("animationend", () => {
-      this.classList.remove("up")
+      this.classList.remove("up");
       this._goUp();
     });
   }
@@ -35,5 +35,4 @@ export class Mole extends HTMLElement {
   }
 }
 
-customElements.define(Mole.is, Mole);
-  
+define(BasicMole.is, BasicMole);

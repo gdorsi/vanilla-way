@@ -13,25 +13,41 @@ export class Mole extends HTMLElement {
 
   constructor() {
     super();
-    
+
     this.addEventListener("click", ({ x, y }) => {
-      emit(this, this.classList.contains("up") ? "hit!" : "miss!", { x, y });
+      if (this.classList.contains("up") && !this._hit) {
+        emit(this, "hit!", { x, y });
+        this._hit = true;
+      }
     });
 
     this.addEventListener("animationend", () => {
-      this.classList.remove("up")
+      if (!this._hit && this._start) {
+        emit(this, "miss!");
+      }
+
+      this._hit = false;
+      this.classList.remove("up");
       this._goUp();
     });
   }
 
   _goUp() {
-    setTimeout(() => {
-      this.classList.add("up");
-    }, randomTime(MIN_TIME, MAX_TIME));
+    if (this._start) {
+      this._timeout = setTimeout(() => {
+        this.classList.add("up");
+      }, randomTime(MIN_TIME, MAX_TIME));
+    }
   }
 
-  connectedCallback() {
+  start() {
+    this._start = true;
     this._goUp();
+  }
+
+  stop() {
+    this._start = false;
+    clearTimeout(this._timeout);
   }
 }
 

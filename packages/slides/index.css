@@ -90,14 +90,14 @@ img.full {
 }
 
 /* Example */
-a-mole {
+a-basic-mole, a-mole {
   overflow: hidden;
   position: relative;
   height: 10vw;
   width: 10vw;
 }
 
-a-mole::after {
+a-basic-mole::after, a-mole::after {
   display: block;
   background: url("images/dirt.svg") bottom center no-repeat;
   background-size: contain;
@@ -109,7 +109,7 @@ a-mole::after {
   bottom: -6px;
 }
 
-a-mole::before {
+a-basic-mole::before, a-mole::before {
   background: url("images/mole.svg") bottom center no-repeat;
   background-size: 60%;
   content: "";
@@ -119,7 +119,7 @@ a-mole::before {
   height: 100%;
 }
 
-a-mole.up::before{
+a-basic-mole.up::before, a-mole.up::before{
   animation: mole-animation 2s ease-in-out;
 }
 
@@ -142,7 +142,36 @@ a-mole.up::before{
   }
 }
 
-hit-message {
+.lose-message {
+  position: fixed;
+  top: 0px;
+  margin: auto;
+  z-index: 5;
+  animation: lose-message-animation 3s ease-in-out;
+  animation-fill-mode: both;
+  user-select: none;
+  background: black;
+  color: white;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+@keyframes lose-message-animation {
+  0% {
+    transform: translateY(0vh);
+  }
+  10% {
+    transform: translateY(20vh);
+  }
+  85% {
+    transform: translateY(20vh);
+  }
+  100% {
+    transform: translateY(120vh);
+  }
+}
+
+.hit-message {
   position: fixed;
   z-index: 5;
   animation: message-animation .3s ease-in-out;

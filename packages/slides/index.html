@@ -6,168 +6,200 @@
 
 <body>
     <my-presentation>
-        <x-slide>
-            <h2>The vanilla way</h2>
-        </x-slide>
-        <x-slide class="media-col">
-            <img class="media" src="me.jpg" width="40%" height="100%">
-            <div class="media-col__info" style="flex-grow: 2;text-align: center;">
-                <h2>Who am i?</h2>
-                <p>Front-end engineer @ Immobiliare.it</p>
-                <p>Functional programming enthusiast</p>
-                <p>Performance paladin!</p>
-            </div>
-        </x-slide>
-        <x-slide>
-            <h2>A vanilla web app</h2>
-            <p>Do things by using the platform</p>
-            <p>in order to be as lightweight as possible</p>
-        </x-slide>
-        <x-slide>
-            <h2>The objectives</h2>
-            <ul>
-                <li>Startup performances</li>
-                <li>Can do SSR with a different language than Javascript</li>
-                <li>Find out how much we can scale without a framework</li>
-            </ul>
-        </x-slide>
-        <x-slide>
-            <h2>Let's start from building blocks!</h2>
-        </x-slide>
-        <x-slide>
-            <h2>&lt;Custom-Elements&gt;</h2>
-            <p>Good for generic components</p>
-            <p>No business/page related logic</p>
-        </x-slide>
-        <x-slide>
-            <h2>Features</h2>
-            <p>Automount</p>
-            <p>Lifecycle callbacks</p>
-            <p>Attributes change listeners</p>
-        </x-slide>
-        <x-slide>
-            <img src="images/code-examples/simple-mole.png" class="full">
-        </x-slide>
-        <x-slide>
-            <div class="col-3">
-                <a-mole></a-mole>
-                <a-mole></a-mole>
-                <a-mole></a-mole>
-            </div>
-        </x-slide>
-        <x-slide>
-            <h2>What about support?</h2>
-            <p>They are natively supported only by Chrome</p>
-            <p>The polyfill can be easly conditionally loaded!</p>
-        </x-slide>
-        <x-slide>
-            <img src="images/code-examples/polyfill.png" class="full">
-        </x-slide>
-        <x-slide>
-            <img src="images/code-examples/app-startup.png" class="full">
-        </x-slide>
-        <x-slide>
-            <h2>Functions as Components!</h2>
-            <p>handle state transitions on multiple components</p>
-            <p>implement business/page logic</p>
-        </x-slide>
-        <x-slide>
-            <img src="images/code-examples/simple-whack.png" class="full">
-        </x-slide>
-        <x-slide class="example2">
-            <p>
-                Score:
-                <span class="score">0</span>
-            </p>
-            <div class="col-3">
-                <a-mole></a-mole>
-                <a-mole></a-mole>
-                <a-mole></a-mole>
-            </div>
-        </x-slide>
-        <x-slide>
-            <h2>State managment</h2>
-        </x-slide>
-        <x-slide>
-            <h2>State managment</h2>
-            <p>Duplicating the source of truth can be a bad practice</p>
-            <p>Let's try to derive from the DOM!</p>
-        </x-slide>
-        <x-slide>
-            <img src="images/code-examples/score-board.png" class="full">
-        </x-slide>
-        <x-slide>
-            <img src="images/code-examples/derived-state.png" class="full">
-        </x-slide>
-        <x-slide class="example3">
-            <p>Score:
-                <score-board>5</score-board>
-            </p>
-            <div class="col-3">
-                <a-mole></a-mole>
-                <a-mole></a-mole>
-                <a-mole></a-mole>
-            </div>
-        </x-slide>
-        <x-slide>
-            <h2>State transitions</h2>
-            <p>Let's use Callbag!</p>
-        </x-slide>
-        <x-slide>
-            <h2>Callbag</h2>
-            <p>"A standard for JS callbacks that enables lightweight observables and iterables"</p>
-        </x-slide>
-        <x-slide>
-            <h2>Callbag</h2>
-            <ul>
-                <li>Minimal overhead streams, Iterables, Observables, AsyncIterables, etc</li>
-                <li>Modular (each operator is its own npm package)</li>
-                <li>Light (few memory allocations)</li>
-                <li>Easy to create your own utilities</li>
-            </ul>
-        </x-slide>
-        <x-slide>
-            <img src="images/code-examples/simple-callbag.png" class="full">
-        </x-slide>
-        <x-slide>
-            <img src="images/code-examples/callbag.png" class="full">
-        </x-slide>
-        <x-slide class="example4">
-            <p>Score:
-                <score-board>0</score-board>
-            </p>
-            <div class="col-3">
-                <a-mole></a-mole>
-                <a-mole></a-mole>
-                <a-mole></a-mole>
-            </div>
-            <div class="col-3">
-                <a-mole></a-mole>
-                <a-mole></a-mole>
-                <a-mole></a-mole>
-            </div>
-            <div class="col-3">
-                <a-mole></a-mole>
-                <a-mole></a-mole>
-                <a-mole></a-mole>
-            </div>
-        </x-slide>
-        <x-slide>
-            <h2>Unit testing?</h2>
-            <p>Inside a browser with Puppeteer & Karma</p>
-        </x-slide>
-        <x-slide>
-            <h2>Useful libraries</h2>
-            <ul>
-                <li>Safe composition: queryselector-functor</li>
-                <li>React-like context: vanilla-context</li>
-                <li>Cross browser dom events emitter: dom-event-emit</li>
-            </ul>
-        </x-slide>
-        <x-slide>
-            <h2>That's all folks!</h2>
-        </x-slide>
+        <x-deck>
+            <x-slide>
+                <h2>The vanilla way</h2>
+            </x-slide>
+            <x-slide class="media-col">
+                <img class="media" src="me-min.jpg" width="40%" height="100%">
+                <div class="media-col__info" style="flex-grow: 2;text-align: center;">
+                    <h2>Who am i?</h2>
+                    <p>Front-end engineer @ Immobiliare.it</p>
+                    <p>Functional programming enthusiast</p>
+                    <p>Performance paladin!</p>
+                </div>
+            </x-slide>
+            <x-slide>
+                <h2>A vanilla web app</h2>
+                <p>Do things by using the platform</p>
+                <p>in order to be as lightweight as possible</p>
+            </x-slide>
+            <x-slide>
+                <h2>The objectives</h2>
+                <ul>
+                    <li>Startup performances</li>
+                    <li>Can do SSR with a different language than Javascript</li>
+                    <li>Find out how much we can scale without a framework</li>
+                </ul>
+            </x-slide>
+            <x-slide>
+                <h2>Let's start from building blocks!</h2>
+            </x-slide>
+            <x-slide>
+                <h2>&lt;Custom-Elements&gt;</h2>
+                <p>Good for generic components</p>
+                <p>No business/page related logic</p>
+            </x-slide>
+            <x-slide>
+                <h2>Features</h2>
+                <p>Automount</p>
+                <p>Lifecycle callbacks</p>
+                <p>Attributes change listeners</p>
+            </x-slide>
+            <x-slide>
+                <img src="images/code-examples/simple-mole.png" class="full">
+            </x-slide>
+            <x-slide class="example1">
+                <div class="col-3">
+                    <a-basic-mole></a-basic-mole>
+                    <a-basic-mole></a-basic-mole>
+                    <a-basic-mole></a-basic-mole>
+                </div>
+            </x-slide>
+            <x-slide>
+                <h2>What about support?</h2>
+                <p>They are natively supported only by Chrome</p>
+                <p>The polyfill can be easly conditionally loaded!</p>
+            </x-slide>
+            <x-slide>
+                <img src="images/code-examples/polyfill.png" class="full">
+            </x-slide>
+            <x-slide>
+                <img src="images/code-examples/app-startup.png" class="full">
+            </x-slide>
+            <x-slide>
+                <h2>Functions as Components!</h2>
+                <p>handle state transitions on multiple components</p>
+                <p>implement business/page logic</p>
+            </x-slide>
+            <x-slide>
+                <img src="images/code-examples/simple-whack.png" class="full">
+            </x-slide>
+            <x-slide class="example2">
+                <button class="start">Start</button>
+                <p>
+                    Lives:
+                    <span class="lives">3</span>
+
+                    Score:
+                    <span class="score">0</span>
+                </p>
+                <div class="col-3">
+                    <a-mole></a-mole>
+                    <a-mole></a-mole>
+                    <a-mole></a-mole>
+                </div>
+            </x-slide>
+            <x-slide>
+                <h2>State managment</h2>
+            </x-slide>
+            <x-slide>
+                <h2>State managment</h2>
+                <p>Duplicating the source of truth can be a bad practice</p>
+                <p>Let's try to derive from the DOM!</p>
+            </x-slide>
+            <x-slide>
+                <img src="images/code-examples/score-board.png" class="full">
+            </x-slide>
+            <x-slide>
+                <img src="images/code-examples/derived-state.png" class="full">
+            </x-slide>
+            <x-slide class="example3">
+                <button class="start">Start</button>
+                <p>
+                    Lives:
+                    <score-board class="lives">5</score-board>
+                    Score:
+                    <score-board class="score">5</score-board>
+                </p>
+                <div class="col-3">
+                    <a-mole></a-mole>
+                    <a-mole></a-mole>
+                    <a-mole></a-mole>
+                </div>
+            </x-slide>
+            <x-slide>
+                <img src="images/code-examples/derived-state.png" class="full">
+            </x-slide>
+            <x-slide class="example4">
+                <button class="start">Start</button>
+                <p>
+                    Lives:
+                    <score-board class="lives">5</score-board>
+                    Score:
+                    <score-board class="score">5</score-board>
+                </p>
+                <div class="col-3">
+                    <a-mole></a-mole>
+                    <a-mole></a-mole>
+                    <a-mole></a-mole>
+                </div>
+            </x-slide>
+            <x-slide>
+                <h2>State transitions</h2>
+                <p>Let's use Callbag!</p>
+            </x-slide>
+            <x-slide>
+                <h2>Callbag</h2>
+                <p>"A standard for JS callbacks that enables lightweight observables and iterables"</p>
+            </x-slide>
+            <x-slide>
+                <h2>Callbag</h2>
+                <ul>
+                    <li>Minimal overhead streams, Iterables, Observables, AsyncIterables, etc</li>
+                    <li>Modular (each operator is its own npm package)</li>
+                    <li>Light (few memory allocations)</li>
+                    <li>Easy to create your own utilities</li>
+                </ul>
+            </x-slide>
+            <x-slide>
+                <img src="images/code-examples/simple-callbag.png" class="full">
+            </x-slide>
+            <x-slide>
+                <img src="images/code-examples/callbag.png" class="full">
+            </x-slide>
+            <x-slide class="example5">
+                <button class="start">Start</button>
+                <p>
+                    Lives:
+                    <score-board class="lives">5</score-board>
+                    Score:
+                    <score-board class="score">5</score-board>
+                </p>
+                <div class="col-3">
+                    <a-mole></a-mole>
+                    <a-mole></a-mole>
+                    <a-mole></a-mole>
+                </div>
+                <div class="col-3">
+                    <a-mole></a-mole>
+                    <a-mole></a-mole>
+                    <a-mole></a-mole>
+                </div>
+                <div class="col-3">
+                    <a-mole></a-mole>
+                    <a-mole></a-mole>
+                    <a-mole></a-mole>
+                </div>
+            </x-slide>
+            <x-slide>
+                <h2>Unit testing?</h2>
+                <p>Inside a browser with Puppeteer & Karma</p>
+            </x-slide>
+            <x-slide>
+                <h2>Useful libraries</h2>
+                <ul>
+                    <li>Safe composition: queryselector-functor</li>
+                    <li>React-like context: vanilla-context</li>
+                    <li>Cross browser dom events emitter: dom-event-emit</li>
+                </ul>
+            </x-slide>
+            <x-slide>
+                <h2>That's all folks!</h2>
+            </x-slide>
+        </x-deck>
         <x-progress>
+        </x-progress>
     </my-presentation>
     <script src="dist/index.js"></script>
 </body>
