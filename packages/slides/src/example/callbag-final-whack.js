@@ -18,53 +18,54 @@ let hitMessage = ({ x, y }) =>
     y
   });
 
-let startCallbag = el =>
+let start = el =>
   pipe(
     fromEvent(el.querySelector(".start"), "click"),
     map(() => ({
+      type: "START",
       score: 0,
-      lives: 5,
-      start: true
+      lives: 5
     }))
   );
 
-let hitCallbag = el =>
+let hit = el =>
   pipe(
     fromEvent(el, "hit!"),
     map(({ detail }) => ({
+      type: "HIT",
       score: 1,
-      hit: detail
+      coords: detail
     }))
   );
 
-let missCallbag = el =>
+let miss = el =>
   pipe(
     fromEvent(el, "miss!"),
     map(() => ({
-      lives: -1,
-      miss: true
+      type: "MISS",
+      lives: -1
     }))
   );
 
 let manageState = (el, moles, score, lives) => action => {
-  if (action.start) {
-    moles.forEach(mole => mole.start());
-    score.value = action.score;
-    lives.value = action.lives;
-  }
+  switch (action.type) {
+    case "START":
+      moles.forEach(mole => mole.start());
+      score.value = action.score;
+      lives.value = action.lives;
+      break;
+    case "HIT":
+      score.value += action.score;
+      el.appendChild(hitMessage(action.coords));
+      break;
+    case "MISS":
+      lives.value += action.lives;
 
-  if (action.hit) {
-    el.appendChild(hitMessage(action.hit));
-    score.value += action.score;
-  }
-
-  if (action.miss) {
-    lives.value += action.lives;
-
-    if (lives.value === 0) {
-      moles.forEach(mole => mole.stop());
-      el.appendChild(loseMessage());
-    }
+      if (lives.value === 0) {
+        moles.forEach(mole => mole.stop());
+        el.appendChild(loseMessage());
+      }
+      break;
   }
 };
 
@@ -74,7 +75,7 @@ export function callbagWhack(el) {
   let moles = [].slice.call(el.querySelectorAll("a-mole"));
 
   pipe(
-    merge(startCallbag(el), hitCallbag(el), missCallbag(el)),
+    merge(start(el), hit(el), miss(el)),
     observe(manageState(el, moles, score, lives))
   );
 }

@@ -127,6 +127,14 @@ a-basic-mole.up::before, a-mole.up::before{
   font-family: monospace;
 }
 
+.heart {
+  display: inline-block;
+  background: url("images/heart.svg") bottom center no-repeat;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+}
+
 @keyframes mole-animation {
   0% {
     transform: translateY(0);

@@ -11,18 +11,14 @@ function randomTime(min, max) {
 export class BasicMole extends HTMLElement {
   static is = "a-basic-mole";
 
-  constructor() {
-    super();
+  onclick = () => {
+    if (this.classList.contains("up")) emit(this, "hit!");
+  };
 
-    this.addEventListener("click", () => {
-      if (this.classList.contains("up")) emit(this, "hit!");
-    });
-
-    this.addEventListener("animationend", () => {
-      this.classList.remove("up");
-      this._goUp();
-    });
-  }
+  onanimationend = () => {
+    this.classList.remove("up");
+    this._goUp();
+  };
 
   _goUp() {
     setTimeout(() => {

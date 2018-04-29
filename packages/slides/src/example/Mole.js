@@ -11,42 +11,43 @@ function randomTime(min, max) {
 export class Mole extends HTMLElement {
   static is = "a-mole";
 
-  constructor() {
-    super();
+  _hit = false;
+  _start = false;
+  _timeout = null;
 
-    this.addEventListener("click", ({ x, y }) => {
-      if (this.classList.contains("up") && !this._hit) {
-        emit(this, "hit!", { x, y });
-        this._hit = true;
-      }
-    });
+  onclick = ({ x, y }) => {
+    if (this.isHittable) {
+      emit(this, "hit!", { x, y });
+      this._hit = true;
+    }
+  };
 
-    this.addEventListener("animationend", () => {
-      if (!this._hit && this._start) {
-        emit(this, "miss!");
-      }
+  onanimationend = () => {
+    if (this.isHittable) emit(this, "miss!");
 
-      this._hit = false;
-      this.classList.remove("up");
-      this._goUp();
-    });
+    this._hit = false;
+    this.classList.remove("up");
+
+    if (this._active) this._goUp();
+  };
+
+  get isHittable() {
+    return this.classList.contains("up") && !this._hit && this._active;
   }
 
   _goUp() {
-    if (this._start) {
-      this._timeout = setTimeout(() => {
-        this.classList.add("up");
-      }, randomTime(MIN_TIME, MAX_TIME));
-    }
+    this._timeout = setTimeout(() => {
+      this.classList.add("up");
+    }, randomTime(MIN_TIME, MAX_TIME));
   }
 
   start() {
-    this._start = true;
+    this._active = true;
     this._goUp();
   }
 
   stop() {
-    this._start = false;
+    this._active = false;
     clearTimeout(this._timeout);
   }
 }
