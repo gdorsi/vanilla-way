@@ -47,23 +47,23 @@ let miss = el =>
     }))
   );
 
-let manageState = (el, moles, score, lives) => action => {
+let manageState = (getters, effects) => action => {
   switch (action.type) {
     case "START":
-      moles.forEach(mole => mole.start());
-      score.value = action.score;
-      lives.value = action.lives;
+      effects.start();
+      effects.setScore(action.score);
+      effects.setLives(action.lives);
       break;
     case "HIT":
-      score.value += action.score;
-      el.appendChild(hitMessage(action.coords));
+      effects.setScore(getters.score() + action.score);
+      effects.appendMsg(hitMessage(action.coords));
       break;
     case "MISS":
-      lives.value += action.lives;
+      effects.setLives(getters.lives() + action.lives);
 
-      if (lives.value === 0) {
-        moles.forEach(mole => mole.stop());
-        el.appendChild(loseMessage());
+      if (getters.lives() === 0) {
+        effects.stop();
+        effects.appendMsg(loseMessage());
       }
       break;
   }
@@ -76,6 +76,30 @@ export function callbagWhack(el) {
 
   pipe(
     merge(start(el), hit(el), miss(el)),
-    observe(manageState(el, moles, score, lives))
+    observe(
+      manageState(
+        {
+          score: () => score.value,
+          lives: () => lives.value
+        },
+        {
+          start() {
+            moles.forEach(mole => mole.start());
+          },
+          stop() {
+            moles.forEach(mole => mole.stop());
+          },
+          setScore(value) {
+            score.value = value;
+          },
+          setLives(value) {
+            lives.value = value;
+          },
+          appendMsg(msg) {
+            el.appendChild(msg);
+          }
+        }
+      )
+    )
   );
 }
