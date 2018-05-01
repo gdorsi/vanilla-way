@@ -25,10 +25,17 @@
                 <p>in order to be as lightweight as possible</p>
             </x-slide>
             <x-slide>
+                <h2>Our constraints</h2>
+                <ul>
+                    <li>SSR, for SEO reasons</li>
+                    <li>Do not change our server view layer (based on PHP)</li>
+                </ul>
+            </x-slide>
+            <x-slide>
                 <h2>Our objectives</h2>
                 <ul>
                     <li>Startup performances</li>
-                    <li>SSR, with a different language than Javascript</li>
+                    <li>No janky interactions</li>
                     <li>Find out how much we can scale without a framework</li>
                 </ul>
             </x-slide>
@@ -38,18 +45,13 @@
             <x-slide>
                 <h2>&lt;Custom-Elements&gt;</h2>
                 <p>Javascript classes that extends HTML</p>
-            </x-slide>
+            </x-slide>    
             <x-slide>
                 <h2>&lt;Custom-Elements&gt;</h2>
                 <h3>Features</h3>
                 <p>Automount</p>
                 <p>Lifecycle callbacks</p>
                 <p>Attributes change listeners</p>
-            </x-slide>
-            <x-slide>
-                <h2>&lt;Custom-Elements&gt;</h2>
-                <p>Good for generic components</p>
-                <p>No business/page related logic</p>
             </x-slide>
             <x-slide>
                 <img src="images/code-examples/simple-mole.png" class="full">
@@ -60,6 +62,11 @@
                     <a-basic-mole></a-basic-mole>
                     <a-basic-mole></a-basic-mole>
                 </div>
+            </x-slide>
+            <x-slide>
+                <h2>&lt;Custom-Elements&gt;</h2>
+                <p>Good for generic components</p>
+                <p>No business/page related logic</p>
             </x-slide>
             <x-slide>
                 <h2>What about support?</h2>
@@ -74,8 +81,6 @@
             </x-slide>
             <x-slide>
                 <h2>Functions as Components!</h2>
-                <p>handle state transitions on multiple components</p>
-                <p>implement business/page logic</p>
             </x-slide>
             <x-slide>
                 <img src="images/code-examples/simple-whack.png" class="full">
@@ -104,6 +109,10 @@
                     <a-mole></a-mole>
                     <a-mole></a-mole>
                 </div>
+            </x-slide>
+            <x-slide>
+                <h2>Functions as Components!</h2>
+                <p>Good for implement business/page logic</p>
             </x-slide>
             <x-slide>
                 <h2>State managment</h2>
@@ -151,36 +160,6 @@
             </x-slide>
             <x-slide>
                 <h2>Measure, then optimize</h2>
-            </x-slide>
-            <x-slide>
-                <img src="images/code-examples/fn+messages.png" class="full">
-            </x-slide>
-            <x-slide>
-                <img src="images/code-examples/animated-message.png" class="full">
-            </x-slide>
-            <x-slide class="example4">
-                <button class="start">Start</button>
-                <p>
-                    Lives:
-                    <score-board class="lives">5</score-board>
-                    Score:
-                    <score-board class="score">5</score-board>
-                </p>
-                <div class="col-3">
-                    <a-mole></a-mole>
-                    <a-mole></a-mole>
-                    <a-mole></a-mole>
-                </div>
-                <div class="col-3">
-                    <a-mole></a-mole>
-                    <a-mole></a-mole>
-                    <a-mole></a-mole>
-                </div>
-                <div class="col-3">
-                    <a-mole></a-mole>
-                    <a-mole></a-mole>
-                    <a-mole></a-mole>
-                </div>
             </x-slide>
             <x-slide>
                 <h2>State transitions</h2>

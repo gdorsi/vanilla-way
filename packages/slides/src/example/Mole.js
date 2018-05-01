@@ -15,21 +15,25 @@ export class Mole extends HTMLElement {
   _start = false;
   _timeout = null;
 
-  onclick = ({ x, y }) => {
-    if (this.isHittable) {
+  constructor() {
+    super();
+
+    this.addEventListener('click', ({ x, y }) => {
+      if (!this.isHittable) return;
+
       emit(this, "hit!", { x, y });
       this._hit = true;
-    }
-  };
+    });
 
-  onanimationend = () => {
-    if (this.isHittable) emit(this, "miss!");
+    this.addEventListener('animationend', () => {
+      if (this.isHittable) emit(this, "miss!");
 
-    this._hit = false;
-    this.classList.remove("up");
+      this._hit = false;
+      this.classList.remove("up");
 
-    if (this._active) this._goUp();
-  };
+      if (this._active) this._goUp();
+    });
+  }
 
   get isHittable() {
     return this.classList.contains("up") && !this._hit && this._active;

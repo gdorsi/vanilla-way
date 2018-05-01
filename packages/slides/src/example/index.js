@@ -18,7 +18,7 @@ export function startExample3(deck) {
 }
 
 export function startExample4(deck) {
-  funWithMsgs(deck.querySelector(".example4"));
+  //funWithMsgs(deck.querySelector(".example4"));
 }
 
 export function startExample5(deck) {
