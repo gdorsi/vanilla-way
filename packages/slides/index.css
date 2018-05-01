@@ -190,6 +190,10 @@ a-basic-mole.up::before, a-mole.up::before{
   border-radius: 10px;
 }
 
+.miss {
+  background: red;
+}
+
 @keyframes message-animation {
   from {
     transform: translate(-50%, -50%) scale(0) rotate(0);

@@ -18,6 +18,21 @@ let hitMessage = ({ x, y }) =>
     y
   });
 
+let missMessage = ({ x, y }) =>
+  new AnimatedMessage({
+    message: "Miss!",
+    className: "hit-message miss",
+    duration: 1000,
+    x,
+    y
+  });
+
+let getRectCenter = rect => ({
+  x: (rect.left + rect.right) / 2,
+  y: (rect.top + rect.bottom) / 2
+});
+
+//Actions sources
 let start = el =>
   pipe(
     fromEvent(el.querySelector(".start"), "click"),
@@ -41,13 +56,14 @@ let hit = el =>
 let miss = el =>
   pipe(
     fromEvent(el, "miss!"),
-    map(() => ({
+    map(({ target }) => ({
       type: "MISS",
-      lives: -1
+      lives: -1,
+      coords: getRectCenter(target.getBoundingClientRect())
     }))
   );
 
-let manageState = (getters, effects) => action => {
+let effectsManager = (getters, effects) => action => {
   switch (action.type) {
     case "START":
       effects.start();
@@ -60,6 +76,7 @@ let manageState = (getters, effects) => action => {
       break;
     case "MISS":
       effects.setLives(getters.lives() + action.lives);
+      effects.appendMsg(missMessage(action.coords));
 
       if (getters.lives() === 0) {
         effects.stop();
@@ -77,11 +94,13 @@ export function callbagWhack(el) {
   pipe(
     merge(start(el), hit(el), miss(el)),
     observe(
-      manageState(
+      effectsManager(
+        //Getters
         {
           score: () => score.value,
           lives: () => lives.value
         },
+        //Effects
         {
           start() {
             moles.forEach(mole => mole.start());
