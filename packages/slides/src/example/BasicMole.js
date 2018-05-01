@@ -1,5 +1,4 @@
 import { define, HTMLElement } from "my-custom-elements-loader";
-import { emit } from "../emit";
 
 const MIN_TIME = 500;
 const MAX_TIME = 3000;
@@ -14,11 +13,8 @@ export class BasicMole extends HTMLElement {
   //Called on element creation
   constructor() {
     super();
-
-    this.addEventListener('click', () => {
-      if (this.classList.contains("up")) emit(this, "hit!");
-    });
-
+    
+    //To create the endless random-interval loop
     this.addEventListener('animationend', () => {
       this.classList.remove("up");
       this._goUp();

@@ -21,21 +21,13 @@
             </x-slide>
             <x-slide>
                 <h2>A vanilla web app</h2>
-                <p>Do things by using the platform</p>
+                <p>Define <b>UI</b> and it's mutations by using <b>directly</b> the platform</p>
             </x-slide>
             <x-slide>
-                <h2>Our constraints</h2>
+                <h2>Why?</h2>
                 <ul>
-                    <li>SSR, for SEO reasons</li>
-                    <li>Do not change our server view layer (based on PHP)</li>
-                </ul>
-            </x-slide>
-            <x-slide>
-                <h2>Our objectives</h2>
-                <ul>
-                    <li>Good Time To Interactive</li>
-                    <li>No janky interactions</li>
-                    <li>Find out how much we can scale without a framework</li>
+                    <li>To reduce the dependencies & the <b>bundle size</b></li>
+                    <li>Easier & cheaper <b>SSR</b> (essential if you need SEO)</li>
                 </ul>
             </x-slide>
             <x-slide>
@@ -43,12 +35,10 @@
             </x-slide>
             <x-slide>
                 <h2>&lt;Custom-Elements&gt;</h2>
-                <p>Javascript classes that extends HTML</p>
-            </x-slide>    
-            <x-slide>
-                <img src="images/code-examples/simple-mole.png" class="full">
-            </x-slide>
+                <p>The native way to define your own elements in HTML</p>
+            </x-slide> 
             <x-slide class="example1">
+                <h2>Let's play whack-a-mole!</h2>
                 <div class="col-3">
                     <a-basic-mole></a-basic-mole>
                     <a-basic-mole></a-basic-mole>
@@ -57,26 +47,35 @@
                 <img src="images/code-examples/ce-html.png">
             </x-slide>
             <x-slide>
+                <img src="images/code-examples/simple-mole.png" class="full">
+            </x-slide>
+            <x-slide>
                 <h2>&lt;Custom-Elements&gt;</h2>
-                <p>Good for generic components</p>
-                <p>No business/page related logic</p>
+                <p>Very reusable (even across frameworks)</p>
+                <p>Good for generic components (like autocompletes, moles, etc)</p>
             </x-slide>
             <x-slide>
                 <h2>What about support?</h2>
                 <p>They are natively supported only by Chrome</p>
-                <p>The polyfill can be easly conditionally loaded!</p>
+                <p>The polyfill can be conditionally loaded! (link to the gist)</p>
             </x-slide>
             <x-slide>
-                <img src="images/code-examples/polyfill.png" class="full">
+                <h2>Functional components</h2>
+                <p>Simple, lightweight & powerful</p>
             </x-slide>
             <x-slide>
-                <img src="images/code-examples/app-startup.png" class="full">
-            </x-slide>
-            <x-slide>
-                <h2>Functions as Components!</h2>
+                <h2>What makes a function a "Functional component?"</h2>
+                <ul>
+                    <li>It isn't a class</li>
+                    <li>Takes an element as input</li>
+                    <li>Manipulate only the input element and it's subtree</li>
+                </ul>
             </x-slide>
             <x-slide>
                 <img src="images/code-examples/simple-whack.png" class="full">
+            </x-slide>
+            <x-slide>
+                <img src="images/code-examples/mole.png" class="full">
             </x-slide>
             <x-slide class="example2">
                 <button class="start">Start</button>
@@ -102,13 +101,6 @@
                     <a-mole></a-mole>
                     <a-mole></a-mole>
                 </div>
-            </x-slide>
-            <x-slide>
-                <img src="images/code-examples/mole.png" class="full">
-            </x-slide>
-            <x-slide>
-                <h2>Functions as Components!</h2>
-                <p>Good for implement business/page logic</p>
             </x-slide>
             <x-slide>
                 <h2>State managment</h2>
