@@ -18,10 +18,10 @@ export class Mole extends HTMLElement {
   constructor() {
     super();
 
-    this.addEventListener('click', ({ x, y }) => {
+    this.addEventListener('click', () => {
       if (!this.isHittable) return;
 
-      emit(this, "hit!", { x, y });
+      emit(this, "hit!");
       this._hit = true;
     });
 

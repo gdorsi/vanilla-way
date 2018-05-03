@@ -19,6 +19,7 @@
     "callbag-basics-esmodules": "^3.0.0",
     "callbag-from-delegated-event": "^1.1.1",
     "callbag-observe": "^1.0.0",
+    "callbag-sample-when": "^1.0.0",
     "express": "^4.16.3",
     "express-static-gzip": "^0.3.2",
     "my-custom-elements-loader": "^0.1.0",

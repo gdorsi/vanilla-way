@@ -1,6 +1,6 @@
 import { HTMLElement, define } from "my-custom-elements-loader";
 import { presentation } from "./presentation";
-import { startExample2, startExample3, startExample4, startExample1, startExample5 } from "./example";
+import { startExample2, startExample3, startExample4, startExample1, startExample5, startExample4b } from "./example";
 
 class App extends HTMLElement {
   static is = "my-presentation";
@@ -13,6 +13,7 @@ class App extends HTMLElement {
     startExample2(this);
     startExample3(this);
     startExample4(this);
+    startExample4b(this);
     startExample5(this);
   }
 }

@@ -4,8 +4,10 @@ import "./ScoreBoard";
 import "./Lives";
 import { simpleWhack } from "./simple-whack";
 import { scoredWhack } from "./scored-whack";
-import { callbagWhack } from "./callbag-final-whack";
+import { callbagWhack } from "./callbag-simple-whack";
 import { funWithMsgs } from "./fun-with-msgs";
+import { missMessage } from "./miss-message";
+import { hitMessage } from "./hit-message";
 
 export function startExample1(deck) {}
 
@@ -18,7 +20,13 @@ export function startExample3(deck) {
 }
 
 export function startExample4(deck) {
-  //funWithMsgs(deck.querySelector(".example4"));
+  missMessage(deck.querySelector(".example4"));
+  deck.querySelector(".example4 a-mole").start();
+}
+
+export function startExample4b(deck) {
+  hitMessage(deck.querySelector(".example4b"));
+  deck.querySelector(".example4b a-mole").start();
 }
 
 export function startExample5(deck) {

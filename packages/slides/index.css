@@ -45,6 +45,15 @@ x-slide.media-col {
   flex-direction: row;
 }
 
+.fragment {
+  opacity: 0;
+  transition: opacity .3s linear;
+}
+
+.fragment.active {
+  opacity: 1;
+}
+
 x-progress {
   --progress: 0;
   position: absolute;

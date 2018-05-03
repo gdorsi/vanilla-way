@@ -1,29 +1,42 @@
 import observe from "callbag-observe";
 
-import { pipe, map, merge, scan, share, fromEvent, filter } from "callbag-basics-esmodules";
-import { Deck } from "./Deck";
-import { Progress } from "./Progress";
+import {
+  pipe,
+  map,
+  merge,
+  scan,
+  share,
+  fromEvent,
+  filter
+} from "callbag-basics-esmodules";
+import "./Deck";
+import "./Progress";
+import "./Slide";
 
-let fromArrowKeyDown = el => pipe(
-  fromEvent(el, "keydown"),
-  map(evt => evt.key || evt.keyCode || evt.which),
-  map(
-    key =>
-      typeof key === "string"
-        ? key
-        : key === 38
-          ? "ArrowUp"
-          : key === 40
-            ? "ArrowDown"
-            : key === 37 ? "ArrowLeft" : key === 39 ? "ArrowRight" : ""
-  ),
-  filter(key => key.indexOf("Arrow") === 0)
-);
+let fromArrowKeyDown = el =>
+  pipe(
+    fromEvent(el, "keydown"),
+    map(evt => evt.key || evt.keyCode || evt.which),
+    map(
+      key =>
+        typeof key === "string"
+          ? key
+          : key === 38
+            ? "ArrowUp"
+            : key === 40
+              ? "ArrowDown"
+              : key === 37
+                ? "ArrowLeft"
+                : key === 39
+                  ? "ArrowRight"
+                  : ""
+    ),
+    filter(key => key.indexOf("Arrow") === 0)
+  );
 
-let slideModifier$ = pipe(
-  fromArrowKeyDown(document),
-  map(key => (key === "ArrowRight" || key === "ArrowUp" ? 1 : -1))
-);
+let activeSlide = deck => deck.slides[deck.active];
+let inFragmentsRange = (slide, modifier) =>
+  slide.fragments[slide.active + modifier];
 
 export let presentation = el => {
   let deck = el.querySelector("x-deck");
@@ -33,11 +46,17 @@ export let presentation = el => {
   deck.active = Math.max(parseInt(initialSlide, 10), 0);
 
   pipe(
-    slideModifier$,
+    fromArrowKeyDown(document),
+    map(key => (key === "ArrowRight" || key === "ArrowUp" ? 1 : -1)),
     observe(modifier => {
-      deck.active += modifier;
-      progress.percentage = deck.active / (deck.length - 1);
-      location.hash = deck.active;
+      let slide = activeSlide(deck);
+      if (inFragmentsRange(slide, modifier)) {
+        slide.active += modifier;
+      } else {
+        deck.active += modifier;
+        progress.percentage = deck.active / (deck.length - 1);
+        location.hash = deck.active;
+      }
     })
   );
 };

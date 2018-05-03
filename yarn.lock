@@ -1275,6 +1275,10 @@ callbag-pipe@1.1.x:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/callbag-pipe/-/callbag-pipe-1.1.1.tgz#f9d9f651f0bb64bc78d91f7132d738f066e3a4cf"
 
+callbag-sample-when@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/callbag-sample-when/-/callbag-sample-when-1.0.0.tgz#6913f54d81ef3a92c47eaaa887fea6a2b91ef699"
+
 callbag-scan@1.0.x:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/callbag-scan/-/callbag-scan-1.0.1.tgz#4634df4823705deb8a5e5fe3a5b3dc48a107ea81"

@@ -10,20 +10,22 @@ export class Deck extends HTMLElement {
     return "x-deck";
   }
 
+  get slides() {
+    return Array.from(this.children);
+  }
+
   get length() {
-    return this.childElementCount;
+    return this.slides.length;
   }
 
   get active() {
-    return Array.from(this.children).findIndex(slide =>
-      slide.classList.contains("active")
-    );
+    return this.slides.findIndex(slide => slide.classList.contains("active"));
   }
 
   set active(value) {
     if (value < 0 || value >= this.length) return;
 
-    Array.from(this.children, (slide, i) => {
+    this.slides.forEach((slide, i) => {
       toggle(slide, "active", i === value);
       toggle(slide, "prev", i === value - 1);
       toggle(slide, "next", i === value + 1);

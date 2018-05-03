@@ -27,7 +27,7 @@
                 <h2>Why?</h2>
                 <ul>
                     <li>To reduce the dependencies & the <b>bundle size</b></li>
-                    <li>Easier & cheaper <b>SSR</b> (essential if you need SEO)</li>
+                    <li>Easier & cheaper <b>SSR</b></li>
                 </ul>
             </x-slide>
             <x-slide>
@@ -103,11 +103,8 @@
             </x-slide>
             <x-slide>
                 <h2>State managment</h2>
-            </x-slide>
-            <x-slide>
-                <h2>State managment</h2>
-                <p>Putting state in closures may duplicate the source of truths</p>
-                <p>Let's try to use the DOM as state holder</p>
+                <p class="fragment">Putting state in closures may duplicate the source of truths</p>
+                <p class="fragment">Let's try to use the DOM as state holder</p>
             </x-slide>
             <x-slide>
                 <img src="images/code-examples/score-board.png" class="full">
@@ -147,7 +144,7 @@
             </x-slide>
             <x-slide>
                 <h2>State transitions</h2>
-                <p>Let's use Callbag!</p>
+                <p class="fragment">Let's use Callbag!</p>
             </x-slide>
             <x-slide>
                 <h2>Callbag</h2>
@@ -157,25 +154,21 @@
             <x-slide>
                 <h2>Why we need callbag?</h2>
                 <ul>
-                    <li>Reactive programming suits better than imperative for transforming events in data</li>
+                    <li>Observables can be very good to transform events in data</li>
                     <li>Light (few memory allocations and small size)</li>
-                    <li>Easy to create your own utilities</li>
+                    <li>Modular & easy to create your own utilities</li>
                 </ul>
             </x-slide>
             <x-slide>
                 <img src="images/code-examples/simple-callbag.png" class="full">
             </x-slide>
-            <x-slide>
-                <img src="images/code-examples/callbag.png" class="full">
+            <x-slide class="example4">
+                <a-mole></a-mole>
+                <img src="images/code-examples/miss-message.png">
             </x-slide>
-            <x-slide>
-                <img src="images/code-examples/callbag-p1.png" class="full">
-            </x-slide>
-            <x-slide>
-                <img src="images/code-examples/callbag-p2.png" class="full">
-            </x-slide>
-            <x-slide>
-                <img src="images/code-examples/callbag-p3.png" class="full">
+            <x-slide class="example4b">
+                <a-mole></a-mole>
+                <img src="images/code-examples/hit-message.png">
             </x-slide>
             <x-slide class="example5">
                 <button class="start">Start</button>
@@ -200,6 +193,12 @@
                     <a-mole></a-mole>
                     <a-mole></a-mole>
                 </div>
+            </x-slide>
+            <x-slide>
+                <img src="images/ive-got-power.gif" class="full" style="width: 60vw" />
+            </x-slide>
+            <x-slide>
+                <h2>Time for a(nother) live demo?</h2>
             </x-slide>
             <x-slide>
                 <h2>That's all folks!</h2>
