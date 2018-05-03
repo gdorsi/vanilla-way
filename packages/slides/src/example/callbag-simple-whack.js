@@ -28,7 +28,7 @@ export function callbagWhack(el) {
 
   pipe(
     fromEvent(el, "hit!"),
-    observe(({ detail }) => {
+    observe(() => {
       score.value += 1;
     })
   );

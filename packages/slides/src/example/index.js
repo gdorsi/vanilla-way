@@ -15,9 +15,7 @@ export function startExample2(deck) {
   simpleWhack(deck.querySelector(".example2"));
 }
 
-export function startExample3(deck) {
-  scoredWhack(deck.querySelector(".example3"));
-}
+export function startExample3(deck) {}
 
 export function startExample4(deck) {
   missMessage(deck.querySelector(".example4"));

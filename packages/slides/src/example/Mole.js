@@ -11,9 +11,7 @@ function randomTime(min, max) {
 export class Mole extends HTMLElement {
   static is = "a-mole";
 
-  _hit = false;
-  _start = false;
-  _timeout = null;
+  _hit = false; _start = false; _timeout = null;
 
   constructor() {
     super();
