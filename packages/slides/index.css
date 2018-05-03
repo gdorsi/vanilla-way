@@ -92,6 +92,11 @@ img.full {
   background: #eee;
 }
 
+.poster {
+  background: url(images/vanilla-way.jpg);
+  background-size: cover;
+}
+
 /* Utilities */
 .col-3 {
   display: grid;
