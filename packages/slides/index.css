@@ -1,7 +1,7 @@
 :root {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 28px;
+  font-size: 46px;
   background-color: #fafafa;
 }
 
@@ -9,8 +9,9 @@ body {
   overflow: hidden;
 }
 
-p {
+p, li {
   max-width: 70vw;
+  margin: .5em;
 }
 
 x-slide {
@@ -20,7 +21,7 @@ x-slide {
   bottom: 0;
   left: 0;
   right: 0;
-  transition: transform 0.3s ease-out;
+  transition: all 0.3s ease-out;
 }
 
 x-slide.active,
@@ -39,6 +40,11 @@ x-slide.prev {
 
 x-slide.next {
   transform: translateX(100%);
+}
+
+x-slide.opacity + x-slide.next, x-slide.opacity.prev {
+  opacity: 0;
+  transform: none;
 }
 
 x-slide.media-col {
@@ -68,8 +74,7 @@ x-progress {
 }
 
 x-note {
-  font-size: 0.5rem;
-  opacity: 0.5;
+  display: none;
 }
 
 img {

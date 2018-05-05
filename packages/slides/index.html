@@ -8,7 +8,7 @@
     <my-presentation>
         <x-deck>
             <x-slide class="poster">
-                <h2>The vanilla way</h2>
+                <h2 style="transform: translateX(-37px);">The vanilla way</h2>
             </x-slide>
             <x-slide class="media-col">
                 <img class="media" src="me-min.jpg" width="40%" height="100%">
@@ -20,31 +20,77 @@
                 </div>
             </x-slide>
             <x-slide>
+                <h2>Front-end development in 2018</h2>
+                <ul>
+                    <li>Startup performances are very important</li>
+                    <li>Javascript & the browsers API are improved alot</li>
+                    <li>There are a tons of tools for compiling & optimize code</li>
+                </ul>
+            </x-slide>
+            <x-slide>
+                <h2>Mainstream front-end frameworks in 2018</h2>
+                <ul>
+                    <li>Essential for develop complex web applications</li>
+                    <li>If you need SSR for SEO, it can be very complex & costly</li>
+                    <li>Mantain versions updated can became a cost</li>
+                </ul>
+            </x-slide>
+            <x-slide>
                 <h2>A vanilla web app</h2>
-                <p>Define
+                <p>
+                    Define
                     <b>UI</b> and all it's mutations by using
-                    <b>directly</b> the platform</p>
+                    <b>directly</b> the platform
+                </p>
             </x-slide>
             <x-slide>
                 <h2>Why?</h2>
                 <ul>
-                    <li>To reduce the dependencies & the
-                        <b>bundle size</b>
+                    <li>
+                        To make lightweight apps that loads instantly
                     </li>
-                    <li>Easier & cheaper
+                    <li>
+                        Easier & cheaper
                         <b>SSR</b>
+                    </li>
+                    <li>
+                        Browsers API never breaks
                     </li>
                 </ul>
             </x-slide>
             <x-slide>
-                <h2>Let's start from building blocks!</h2>
+                <h2>Trade-offs</h2>
+                <ul>
+                    <li>You have to implement every DOM mutation</li>
+                    <li>Cross browser compatibility</li>
+                    <li>There isn't a standard way to write vanilla applications</li>
+                </ul>
+            </x-slide>
+            <x-slide>
+                <h2>How can we write a modern vanilla web application?</h2>
+                <p class="fragment">Let's start from building blocks</p>
             </x-slide>
             <x-slide>
                 <h2>&lt;Custom-Elements&gt;</h2>
                 <p>The native way to define your own elements in HTML</p>
             </x-slide>
-            <x-slide>
+            <x-slide class="opacity">
                 <img src="images/code-examples/simple-mole.png" class="full">
+            </x-slide>
+            <x-slide class="opacity">
+                <img src="images/code-examples/simple-mole-1.png" class="full">
+            </x-slide>
+            <x-slide class="opacity">
+                <img src="images/code-examples/simple-mole-2.png" class="full">
+            </x-slide>
+            <x-slide class="opacity">
+                <img src="images/code-examples/simple-mole-3.png" class="full">
+            </x-slide>
+            <x-slide class="opacity">
+                <img src="images/code-examples/simple-mole-4.png" class="full">
+            </x-slide>
+            <x-slide>
+                <img src="images/code-examples/simple-mole-5.png" class="full">
             </x-slide>
             <x-slide class="example1">
                 <div class="col-3">
@@ -57,27 +103,39 @@
             <x-slide>
                 <h2>&lt;Custom-Elements&gt;</h2>
                 <p>Very reusable (even across frameworks)</p>
-                <p>Good for generic components (like autocompletes, moles, etc)</p>
+                <p>Good for generic components (like autocompletes, galleries, maps, moles, ...)</p>
             </x-slide>
             <x-slide>
                 <h2>What about support?</h2>
-                <p>They are natively supported only by Chrome</p>
-                <p>The polyfill can be conditionally loaded! (link to the gist)</p>
+                <img src="images/caniuse.png">
+                <p class="fragment">The polyfill can be conditionally loaded! (link to the gist)</p>
             </x-slide>
             <x-slide>
                 <h2>Functional components</h2>
                 <p>Simple, lightweight & powerful</p>
             </x-slide>
             <x-slide>
-                <h2>What makes a function a vanilla "Functional component?"</h2>
+                <h2>What makes a function a "Functional component?"</h2>
                 <ul>
                     <li>It isn't a class</li>
                     <li>Takes an element as input</li>
                     <li>Manipulate only the input element and it's subtree</li>
                 </ul>
             </x-slide>
-            <x-slide>
+            <x-slide class="opacity">
                 <img src="images/code-examples/simple-whack.png" class="full">
+            </x-slide>
+            <x-slide class="opacity">
+                <img src="images/code-examples/simple-whack-1.png" class="full">
+            </x-slide>
+            <x-slide class="opacity">
+                <img src="images/code-examples/simple-whack-2.png" class="full">
+            </x-slide>
+            <x-slide class="opacity">
+                <img src="images/code-examples/simple-whack-3.png" class="full">
+            </x-slide>
+            <x-slide>
+                <img src="images/code-examples/simple-whack-4.png" class="full">
             </x-slide>
             <x-slide>
                 <img src="images/code-examples/mole.png" class="full">
@@ -108,30 +166,37 @@
                 </div>
             </x-slide>
             <x-slide>
-                <h2>State managment</h2>
+                <h2>State management</h2>
                 <p class="fragment">Putting state in closures may duplicate the source of truths</p>
                 <p class="fragment">Let's try to use the DOM as state holder</p>
             </x-slide>
             <x-slide>
-                <img src="images/code-examples/score-board.png" class="full">
+                <img src="images/code-examples/scored-whack .png" class="full">
             </x-slide>
             <x-slide>
-                <img src="images/code-examples/fn+score+lives.png" class="full">
+                <img src="images/code-examples/score-board.png" class="full">
             </x-slide>
             <x-slide>
                 <h2>What about performance?</h2>
             </x-slide>
             <x-slide>
                 <h2>Measure, then optimize</h2>
+                <p class="fragment">It's better to optimize tha small number of cases than everything</p>
             </x-slide>
             <x-slide>
                 <h2>State transitions</h2>
                 <p class="fragment">Let's use Callbag!</p>
+                <x-note>
+                    Who knows what are Obesrvables?
+                </x-note>
             </x-slide>
             <x-slide>
                 <h2>Callbag</h2>
                 <p>"A standard for JS callbacks that enables lightweight observables and iterables"</p>
                 <img src="images/code-examples/example-callbag.png">
+            </x-slide>
+            <x-slide>
+                Spiega meglio come è implementato Callbag embraces
             </x-slide>
             <x-slide>
                 <h2>Why we need callbag?</h2>
@@ -174,11 +239,20 @@
                 </div>
             </x-slide>
             <x-slide>
-                <h2>Time for another demo?</h2>
+                <h2>Time for another demo</h2>
                 <p class="fragment">This presentation is 100% vanilla js!</p>
             </x-slide>
             <x-slide>
+                <h2>Fast recap</h2>
+                3 things
+            </x-slide>
+            <x-slide>
+                <h2>References</h2>
+            </x-slide>
+            <x-slide>
                 <h2>That's all folks!</h2>
+                <p>Any questions?</p>
+                + miei contatti
             </x-slide>
         </x-deck>
         <x-progress>
