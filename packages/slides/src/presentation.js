@@ -28,18 +28,9 @@ let fromEnterKeyDown = el =>
     map(() => 1)
   );
 
-let fromEscapeKeyDown = el =>
-  pipe(
-    fromEvent(el, "keydown"),
-    map(evt => evt.key),
-    filter(key => key === "Escape"),
-    map(() => -1)
-  );
-
 let fromKeyboard = el => merge(
   fromArrowKeyDown(el),
-  fromEnterKeyDown(el),
-  fromEscapeKeyDown(el)
+  fromEnterKeyDown(el)
 )
 
 let activeSlide = deck => deck.slides[deck.active];
