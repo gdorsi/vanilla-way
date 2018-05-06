@@ -5,7 +5,6 @@ import "./Lives";
 import { simpleWhack } from "./simple-whack";
 import { scoredWhack } from "./scored-whack";
 import { callbagWhack } from "./callbag-simple-whack";
-import { funWithMsgs } from "./fun-with-msgs";
 import { missMessage } from "./miss-message";
 import { hitMessage } from "./hit-message";
 

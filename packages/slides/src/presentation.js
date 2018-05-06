@@ -1,5 +1,4 @@
 import observe from "callbag-observe";
-
 import {
   pipe,
   map,
@@ -16,23 +15,32 @@ import "./Slide";
 let fromArrowKeyDown = el =>
   pipe(
     fromEvent(el, "keydown"),
-    map(evt => evt.key || evt.keyCode || evt.which),
-    map(
-      key =>
-        typeof key === "string"
-          ? key
-          : key === 38
-            ? "ArrowUp"
-            : key === 40
-              ? "ArrowDown"
-              : key === 37
-                ? "ArrowLeft"
-                : key === 39
-                  ? "ArrowRight"
-                  : ""
-    ),
-    filter(key => key.indexOf("Arrow") === 0)
+    map(evt => evt.key),
+    filter(key => key.indexOf("Arrow") === 0),
+    map(key => (key === "ArrowRight" || key === "ArrowUp" ? 1 : -1))
   );
+
+let fromEnterKeyDown = el =>
+  pipe(
+    fromEvent(el, "keydown"),
+    map(evt => evt.key),
+    filter(key => key === "Enter"),
+    map(() => 1)
+  );
+
+let fromEscapeKeyDown = el =>
+  pipe(
+    fromEvent(el, "keydown"),
+    map(evt => evt.key),
+    filter(key => key === "Escape"),
+    map(() => -1)
+  );
+
+let fromKeyboard = el => merge(
+  fromArrowKeyDown(el),
+  fromEnterKeyDown(el),
+  fromEscapeKeyDown(el)
+)
 
 let activeSlide = deck => deck.slides[deck.active];
 let inFragmentsRange = (slide, modifier) =>
@@ -46,8 +54,7 @@ export let presentation = el => {
   deck.active = Math.max(parseInt(initialSlide, 10), 0);
 
   pipe(
-    fromArrowKeyDown(document),
-    map(key => (key === "ArrowRight" || key === "ArrowUp" ? 1 : -1)),
+    fromKeyboard(document),
     observe(modifier => {
       let slide = activeSlide(deck);
       if (inFragmentsRange(slide, modifier)) {
