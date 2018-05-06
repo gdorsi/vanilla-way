@@ -22,13 +22,13 @@
             <x-slide>
                 <h2>Front-end development in 2018</h2>
                 <ul>
-                    <li>Startup performances are very important</li>
                     <li>Javascript & the browsers API are improved alot</li>
                     <li>There are a tons of tools for compiling & optimize code</li>
+                    <li>Performance budgets has become almost necessary</li>
                 </ul>
             </x-slide>
             <x-slide>
-                <h2>Mainstream front-end frameworks in 2018</h2>
+                <h2>Mainstream frameworks</h2>
                 <ul>
                     <li>Essential for develop complex web applications</li>
                     <li>If you need SSR for SEO, it can be very complex & costly</li>
@@ -204,18 +204,18 @@
             </x-slide>
             <x-slide>
                 <h2>Callbag</h2>
-                <p>"A standard for JS callbacks that enables lightweight observables and iterables"</p>
+                <p>"A standard for JS callbacks that enables lightweight observables and iterables with a decentralized implementation"</p>
                 <img src="images/code-examples/example-callbag.png">
             </x-slide>
             <x-slide>
-                Spiega meglio come è implementato Callbag embraces
+                <img src="images/code-examples/callbag-implementation.png" class="full">
             </x-slide>
             <x-slide>
                 <h2>Why we need callbag?</h2>
                 <ul>
                     <li>Observables can be very good to transform events in data</li>
                     <li>Light (few memory allocations and small size)</li>
-                    <li>Modular & is easy to create your own utilities</li>
+                    <li>Modular & easy to create your own utilities</li>
                 </ul>
             </x-slide>
             <x-slide class="example4">
@@ -255,16 +255,30 @@
                 <p class="fragment">This presentation is 100% vanilla js!</p>
             </x-slide>
             <x-slide>
-                <h2>Fast recap</h2>
-                3 things
+                <h2>My Vanilla Way (fast recap)</h2>
+                <ul>
+                    <li><b>Custom-Elements</b> and some functions as building blocks</li>
+                    <li>Place some <b>state into the DOM</b> to avoid inconsistencies</li>
+                    <li>Use <b>Callbags</b> to simplify some parts of state management</li>   
+                </ul>
             </x-slide>
             <x-slide>
-                <h2>References</h2>
+                <h2>Useful links</h2>
+                <ul>
+                    <li>Web components loader <a href="https://github.com/webcomponents/webcomponentsjs">https://github.com/webcomponents/webcomponentsjs</a></li>
+                    <li>My custom elements loader <a href="https://github.com/webcomponents/webcomponentsjs">https://github.com/webcomponents/webcomponentsjs</a></li>
+                    <li>Callbags repo <a href="https://github.com/callbag/callbag">https://github.com/callbag/callbag</a></li>
+                    <li>Presentation <a href="https://github.com/callbag/callbag">https://github.com/callbag/callbag</a></li>
+                </ul>
             </x-slide>
             <x-slide>
                 <h2>That's all folks!</h2>
                 <p>Any questions?</p>
-                + miei contatti
+                <div style="position: absolute; bottom: 50px;">
+                    Guido D'Orsi |
+                    <img src="images/github.svg" height="46"> gdorsi |
+                    <img src="images/twitter.png" height="46"> @sockhatso
+                </div>
             </x-slide>
         </x-deck>
         <x-progress>
