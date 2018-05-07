@@ -28,14 +28,12 @@ let fromEnterKeyDown = el =>
     map(() => 1)
   );
 
-let fromKeyboard = el => merge(
-  fromArrowKeyDown(el),
-  fromEnterKeyDown(el)
-)
+let fromKeyboard = el => merge(fromArrowKeyDown(el), fromEnterKeyDown(el));
 
 let activeSlide = deck => deck.slides[deck.active];
 let inFragmentsRange = (slide, modifier) =>
-  slide.fragments[slide.active + modifier];
+  slide.active + modifier >= -1 &&
+  slide.active + modifier < slide.fragments.length;
 
 export let presentation = el => {
   let deck = el.querySelector("x-deck");
