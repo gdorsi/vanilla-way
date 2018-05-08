@@ -1,8 +1,9 @@
 import { Slide } from "../Slide";
 import { Progress } from "../Progress";
 import { Deck } from "../Deck";
-import { presentation } from "../presentation";
+import { presentation, fromKeyboard } from "../presentation";
 import { whenDefined } from "my-custom-elements-loader";
+import observe from "callbag-observe";
 
 beforeAll(async done => {
   await whenDefined(Slide.is);
@@ -10,6 +11,24 @@ beforeAll(async done => {
   await whenDefined(Deck.is);
   done();
 }, 500);
+
+describe("fromKeyboard", () => {
+  [
+    ["Enter", 1],
+    ["ArrowRight", 1],
+    ["ArrowUp", 1],
+    ["ArrowDown", -1],
+    ["ArrowLeft", -1]
+  ].map(([key, modifier]) => {
+    it(`Should transform ${key} keydown in ${modifier}`, () => {
+      let el = document.createElement("div");
+      let spy = jasmine.createSpy();
+      observe(spy)(fromKeyboard(el));
+      el.dispatchEvent(getKeyDownEvent(key));
+      expect(spy).toHaveBeenCalledWith(modifier);
+    });
+  });
+});
 
 describe("presentation", () => {
   it("Should set the active slide to location hash number", () => {
@@ -23,13 +42,13 @@ describe("presentation", () => {
     expect(el.querySelector("x-deck").active).toBe(2);
   });
 
-  it("Should listen for keyboard events", () => {
+  it("Should hendle keyboard events", () => {
     let el = example();
     presentation(el);
 
     document.dispatchEvent(getKeyDownEvent("Enter"));
-    document.dispatchEvent(getKeyDownEvent("ArrowRight"));
-    document.dispatchEvent(getKeyDownEvent("ArrowUp"));
+    document.dispatchEvent(getKeyDownEvent("Enter"));
+    document.dispatchEvent(getKeyDownEvent("Enter"));
 
     expect(el.querySelector("x-deck").active).toBe(1);
     expect(el.querySelector("x-slide").active).toBe(1);

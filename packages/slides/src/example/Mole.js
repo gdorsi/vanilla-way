@@ -1,5 +1,5 @@
 import { define, HTMLElement } from "my-custom-elements-loader";
-import { emit } from "../emit";
+import { emit } from "./emit";
 
 const MIN_TIME = 500;
 const MAX_TIME = 7000;
@@ -11,19 +11,21 @@ function randomTime(min, max) {
 export class Mole extends HTMLElement {
   static is = "a-mole";
 
-  _hit = false; _start = false; _timeout = null;
+  _hit = false;
+  _start = false;
+  _timeout = null;
 
   constructor() {
     super();
 
-    this.addEventListener('click', () => {
+    this.addEventListener("click", () => {
       if (!this.isHittable) return;
 
       emit(this, "hit!");
       this._hit = true;
     });
 
-    this.addEventListener('animationend', () => {
+    this.addEventListener("animationend", () => {
       if (this.isHittable) emit(this, "miss!");
 
       this._hit = false;

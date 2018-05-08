@@ -1,7 +1,6 @@
 import "./BasicMole";
 import "./Mole";
 import "./ScoreBoard";
-import "./Lives";
 import { simpleWhack } from "./simple-whack";
 import { scoredWhack } from "./scored-whack";
 import { callbagWhack } from "./callbag-simple-whack";

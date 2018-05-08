@@ -2,8 +2,8 @@ import { Slide } from "../Slide";
 import { whenDefined } from "my-custom-elements-loader";
 
 beforeAll(async done => {
-    await whenDefined(Slide.is);
-    done();
+  await whenDefined(Slide.is);
+  done();
 }, 500);
 
 describe("Slide", () => {
@@ -29,6 +29,20 @@ describe("Slide", () => {
       slide.innerHTML = `<div></div><div class="fragment"></div><div></div><div></div>`;
 
       expect(slide.active).toBe(-1);
+    });
+
+    it("Should disable all fragments when is set with negative values", () => {
+      let slide = new Slide();
+      slide.innerHTML = `<div class="fragment active"></div><div class="fragment active"></div><div></div><div></div>`;
+      slide.active = -2;
+      expect(slide.querySelectorAll(".active").length).toBe(0);
+    });
+
+    it("Should enabel all fragments when is set big values", () => {
+      let slide = new Slide();
+      slide.innerHTML = `<div class="fragment"></div><div class="fragment"></div><div></div><div></div>`;
+      slide.active = 100;
+      expect(slide.querySelectorAll(".active").length).toBe(2);
     });
   });
 
