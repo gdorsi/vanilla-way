@@ -9,6 +9,10 @@ body {
   overflow: hidden;
 }
 
+a[href] {
+  color: blue;
+}
+
 p, li {
   max-width: 70vw;
   margin: .5em;
