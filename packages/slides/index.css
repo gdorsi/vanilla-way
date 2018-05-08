@@ -18,6 +18,10 @@ p, li {
   margin: .5em;
 }
 
+p {
+  text-align: center;
+}
+
 x-slide {
   display: none;
   position: absolute;
