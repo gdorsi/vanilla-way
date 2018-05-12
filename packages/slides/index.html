@@ -22,26 +22,52 @@
             <x-slide>
                 <h2>Front-end development in the jQuery era</h2>
                 <ul>
-                    <li><b>Cross-browser support</b> was a big problem</li>
-                    <li>Javascript had a <b>poor ecosystem</b></li>
-                    <li>Websites were almost <b>static</b></li>
+                    <li>
+                        <b>Cross-browser support</b> was a big problem</li>
+                    <li>Javascript had a
+                        <b>poor ecosystem</b>
+                    </li>
+                    <li>Websites were almost
+                        <b>static</b>
+                    </li>
                 </ul>
             </x-slide>
             <x-slide>
                 <h2>Front-end development in 2018</h2>
                 <ul>
-                    <li>The <b>browsers API</b> have improved a lot</li>
-                    <li>Javascript has evolved and its <b>ecosystem has expanded</b></li>
-                    <li>Websites have become <b>Web Applications</b></li>
+                    <li>The
+                        <b>browsers API</b> have improved a lot</li>
+                    <li>Javascript has evolved and its
+                        <b>ecosystem has expanded</b>
+                    </li>
+                    <li>Websites have become
+                        <b>Web Applications</b>
+                    </li>
                 </ul>
             </x-slide>
             <x-slide>
                 <h2>Front-end frameworks (React, Angular, Vue)</h2>
                 <ul>
-                    <li>Essential to develop <b>complex web applications</b></li>
-                    <li>If you need <b>SSR</b> for SEO, it can be very <b>complex & costly</b></li>
-                    <li>Using a framework can lead to <b>big code bundle</b></li>
+                    <li>Essential to develop
+                        <b>complex web applications</b>
+                    </li>
+                    <li>If you need
+                        <b>SSR</b> for SEO, it can be very
+                        <b>complex & costly</b>
+                    </li>
+                    <li>Using a framework can lead to
+                        <b>big code bundle</b>
+                    </li>
                 </ul>
+            </x-slide>
+            <x-slide>
+                <p>
+                    <i>"
+                        <b>Frameworks are an abstraction</b>. They make a subset of tasks easier to achieve, in a way that's
+                        familiar to other users of the framework.
+                        <b>The cost is performance</b> - the overhead of the framework. The key is making the cost worth it."
+                    </i> Jake Archibald.
+                </p>
             </x-slide>
             <x-slide>
                 <h2>A vanilla web app</h2>
@@ -55,23 +81,29 @@
                 <h2>Why?</h2>
                 <ul>
                     <li>
-                        To make lightweight apps that <b>load instantly</b>
+                        To make lightweight apps that
+                        <b>load instantly</b>
                     </li>
                     <li>
                         Easier & cheaper
                         <b>SSR</b>
                     </li>
                     <li>
-                        Browsers API <b>never break</b>
+                        Browsers API
+                        <b>never break</b>
                     </li>
                 </ul>
             </x-slide>
             <x-slide>
                 <h2>Trade-offs</h2>
                 <ul>
-                    <li>You have to <b>implement every DOM mutation</b></li>
-                    <li><b>Cross browser</b> compatibility</li>
-                    <li>There isn't a <b>standard way</b> to write vanilla applications</li>
+                    <li>You have to
+                        <b>implement every DOM mutation</b>
+                    </li>
+                    <li>
+                        <b>Cross browser</b> compatibility</li>
+                    <li>There isn't a
+                        <b>standard way</b> to write vanilla applications</li>
                 </ul>
             </x-slide>
             <x-slide>
@@ -205,9 +237,13 @@
             </x-slide>
             <x-slide>
                 <h2>State transitions</h2>
-                <p class="fragment">An <b>imperative</b> approach may lead to <b>unpredicatble</b> code</p>
-                <p class="fragment">Functional <b>Reactive Programming</b> may be a solution</p>
-                <p class="fragment">Let's try <b>Callbag</b>!</p>
+                <p class="fragment">An
+                    <b>imperative</b> approach may lead to
+                    <b>unpredicatble</b> code</p>
+                <p class="fragment">Functional
+                    <b>Reactive Programming</b> may be a solution</p>
+                <p class="fragment">Let's try
+                    <b>Callbag</b>!</p>
                 <x-note>
                     Who knows what are Observables?
                 </x-note>
@@ -220,9 +256,16 @@
             <x-slide>
                 <h2>Why do we need callbag?</h2>
                 <ul>
-                    <li><b>Observables</b> can be very good to <b>transform events in data</b></li>
-                    <li><b>Light</b> (few memory allocations and small size)</li>
-                    <li><b>Modular</b> & easy to create <b>your own utilities</b></li>
+                    <li>
+                        <b>Observables</b> can be very good to
+                        <b>transform events in data</b>
+                    </li>
+                    <li>
+                        <b>Light</b> (few memory allocations and small size)</li>
+                    <li>
+                        <b>Modular</b> & easy to create
+                        <b>your own utilities</b>
+                    </li>
                 </ul>
             </x-slide>
             <x-slide class="example4">
@@ -267,18 +310,29 @@
             <x-slide>
                 <h2>My Vanilla Way (fast recap)</h2>
                 <ul>
-                    <li><b>Custom-Elements</b> and functions as building blocks</li>
-                    <li>Place some <b>state into the DOM</b> to avoid inconsistencies</li>
-                    <li>Use <b>Callbags</b> to simplify some parts of state management</li>   
+                    <li>
+                        <b>Custom-Elements</b> and functions as building blocks</li>
+                    <li>Place some
+                        <b>state into the DOM</b> to avoid inconsistencies</li>
+                    <li>Use
+                        <b>Callbags</b> to simplify some parts of state management</li>
                 </ul>
             </x-slide>
             <x-slide>
                 <h2>Useful links</h2>
                 <ul>
-                    <li>Web components loader <a href="https://github.com/webcomponents/webcomponentsjs">https://github.com/webcomponents/webcomponentsjs</a></li>
-                    <li>My custom elements loader gist <a href="https://gist.github.com/gdorsi/d48cebcbba31406a58764f844bbe0e35">https://gist.github.com/gdorsi/d48cebcbba31406a58764f844bbe0e35</a></li>
-                    <li>Callbags repo <a href="https://github.com/callbag/callbag">https://github.com/callbag/callbag</a></li>
-                    <li>This presentation <a href="https://github.com/gdorsi/vanilla-way">https://github.com/gdorsi/vanilla-way</a></li>
+                    <li>Web components loader
+                        <a href="https://github.com/webcomponents/webcomponentsjs">https://github.com/webcomponents/webcomponentsjs</a>
+                    </li>
+                    <li>My custom elements loader gist
+                        <a href="https://gist.github.com/gdorsi/d48cebcbba31406a58764f844bbe0e35">https://gist.github.com/gdorsi/d48cebcbba31406a58764f844bbe0e35</a>
+                    </li>
+                    <li>Callbags repo
+                        <a href="https://github.com/callbag/callbag">https://github.com/callbag/callbag</a>
+                    </li>
+                    <li>This presentation
+                        <a href="https://github.com/gdorsi/vanilla-way">https://github.com/gdorsi/vanilla-way</a>
+                    </li>
                 </ul>
             </x-slide>
             <x-slide>

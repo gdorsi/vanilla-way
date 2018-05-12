@@ -28,7 +28,8 @@ let fromEnterKeyDown = el =>
     map(() => 1)
   );
 
-export let fromKeyboard = el => merge(fromArrowKeyDown(el), fromEnterKeyDown(el));
+export let fromKeyboard = el =>
+  merge(fromArrowKeyDown(el), fromEnterKeyDown(el));
 
 let activeSlide = deck => deck.slides[deck.active];
 let inFragmentsRange = (slide, modifier) =>
